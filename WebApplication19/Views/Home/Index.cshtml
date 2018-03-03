@@ -1,0 +1,145 @@
+﻿
+@model WebApplication19.Models.Parameters
+    
+
+
+<p></p>
+
+
+
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+  
+
+
+
+
+
+  <P> Wybierz model centrali : 
+ 
+           @Html.DropDownListFor(m => m.Typoszereg,
+         new SelectList(
+
+                     new List<Object> {
+                       new  { value = 0, text = "Amber 1" },
+
+                       new  { value = 100, text = "Amber 2"},
+
+                       new  { value = 200, text = "Amber 1 DACHOWY"},
+                  },
+                "value",
+                "text",
+                1
+         )
+      )
+  </P>
+   
+
+  <P> Wybierz wymiennik : 
+ 
+           @Html.DropDownListFor(m => m.Wymiennik,
+         new SelectList(
+
+                     new List<Object> {
+                       new  { value = 0, text = "krzyżowy" },
+                       new  { value = 20 , text = "przeciwprądowy"},
+
+                       new  { value = 40 , text = "obrotowy"},
+                  },
+                "value",
+                "text",
+                1
+         )
+      )
+  </P>
+
+
+   
+   <P> Wybierz sposób montażu : 
+ 
+           @Html.DropDownListFor(m => m.Montaz,
+         new SelectList(
+
+                     new List<Object> {
+                       new  { value = 0, text = "Stojący" },
+                       new  { value = 10 , text = "Podwieszany"},
+
+                    
+                  },
+                "value",
+                "text",
+                1
+         )
+      )
+  </P>
+
+
+
+
+  <P> Wybierz wydatek nominalny centrali [m3/h]  : 
+ 
+           @Html.DropDownListFor(m => m.WydNom,
+         new SelectList(
+
+                     new List<Object> {
+                       new  { value = 1, text = "300 " },
+                       new  { value = 2 , text = "500 "},
+                       new  { value = 3 , text = "800 "},
+                       new  { value = 4 , text = "1200 "},
+
+
+
+
+                  },
+                "value",
+                "text",
+                1
+         )
+      )
+  </P>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <p> Podaj zakładany wydatek centrali [m3/h] : @Html.TextBoxFor(m => m.Wydatek)</p>
+
+   <p> Podaj opór instalacji [Pa] : @Html.TextBoxFor(m => m.Sprez)</P>
+
+
+      
+
+
+    
+
+
+
+    <input type="submit" value="Wykres" />
+
+    <p>
+ 
+
+
+    
+    </P>
+    
+
+
+}
+
+   
+
