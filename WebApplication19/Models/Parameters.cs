@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 
 namespace WebApplication19.Models
-{
+{ 
     public class Parameters
     {
         public int Wydatek { get; set; }
