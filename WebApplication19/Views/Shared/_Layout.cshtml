@@ -46,35 +46,38 @@
 
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+
+
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Wprowadz dane", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-              
+<body> 
+            <div id="menu">
+               <ul class="sub_menu"> 
                     <li>@Html.ActionLink("Kontakt", "Kontakt", "Home")</li>
-                   
+                    <li>@Html.ActionLink("Centrale", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Wymienniki", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Program doborowy", "Index", "Home")</li>
+                    
+                    
+                    
                 </ul>
             </div>
-        </div>
-    </div>
-    <div class="container body-content">
+   
+    <div id="stripe">
+        <div id="stripe-text">Program doborowy - Amber </div>
+     </div>
+   
+        
+  
+    <div class="body-content">
+       
         @RenderBody()
-        <hr />
-        <footer>
-            
-        </footer>
     </div>
+
+    
+
+
+
+
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

@@ -1,0 +1,28 @@
+﻿#stripe
+{
+    background-color:#00389B;
+    width:100%;
+    height:80px;
+    
+    
+    padding-left:8%;
+    padding-right:8%;
+
+    display:flex;
+    align-items:center;
+   
+}
+#stripe-text
+{
+    font-size:30px;
+    text-align:left;
+    
+
+    color:white;
+    
+    font-family: Arial;
+    
+
+   
+        
+}

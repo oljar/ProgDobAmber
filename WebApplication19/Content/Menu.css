@@ -1,0 +1,45 @@
+﻿
+#menu
+{
+     width: auto;
+     height: 100px;
+    
+   
+     list-style:inside circle;
+     background-color:white;
+     background-image:url(../Image/logo.png);
+  
+     background-position:left;
+     background-repeat:no-repeat;
+     background-size:130px;
+   
+     margin-left:8%;
+}
+
+
+
+
+
+#menu ul {
+        margin:0;
+        padding:0;
+        list-style-type:none;
+       
+      }
+
+      /* wygląd elementów - li */
+#menu > ul > li {
+        float:right;
+        padding:10px 10px 10px 10px;
+
+      }
+
+      /* wygląd nieparzystych elementów - li elementu - ul */
+#menu > ul > li:nth-child(odd) {
+        background-color:gold;
+      }
+
+      /* wygląd parzystych elementów - li elementu - ul */
+#menu > ul > li:nth-child(even) {
+        background-color: lightblue;
+    }
