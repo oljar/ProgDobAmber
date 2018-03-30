@@ -269,6 +269,7 @@
     <Content Include="Views\Home\Kontakt.cshtml" />
     <Content Include="Views\Home\Wykres.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Automatic.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

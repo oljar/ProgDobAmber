@@ -1,45 +1,140 @@
 ﻿
-#menu
-{
-     width: auto;
-     height: 100px;
-    
-   
-     list-style:inside circle;
-     background-color:white;
-     background-image:url(../Image/logo.png);
-  
-     background-position:left;
-     background-repeat:no-repeat;
-     background-size:130px;
-   
-     margin-left:8%;
-}
 
 
-
-
-
-#menu ul {
-        margin:0;
+      #submenu {
+        width:800px;
+        height:50px;
+        margin:0 auto;
         padding:0;
         list-style-type:none;
-       
+        float:right;
+      }
+
+      /* naprawa wysokości elementu - ol */
+    
+        #submenu::after{
+        content:'';
+        display:block;
+        clear:both;
       }
 
       /* wygląd elementów - li */
-#menu > ul > li {
-        float:right;
-        padding:10px 10px 10px 10px;
+      #submenu > li {
+        float:left;
+        width:200px;
+         
+        
+
 
       }
+     
 
-      /* wygląd nieparzystych elementów - li elementu - ul */
-#menu > ul > li:nth-child(odd) {
-        background-color:gold;
+
+       
+      
+     
+      #submenu > li > a {
+       
+        height:50px;
+        display:block;
+        padding:0;
+        text-decoration:none;
+        text-align:center;
+        color:#000;
+        background-color:#000;
+        box-shadow:0 0 0 1px #FFF inset;
+        background-image:linear-gradient(#FFF 0%, #EEE 30%, #FFF 70%, blue 100%);
+
+    
       }
 
-      /* wygląd parzystych elementów - li elementu - ul */
-#menu > ul > li:nth-child(even) {
-        background-color: lightblue;
-    }
+         
+     
+     
+
+      
+
+
+
+
+      /* wygląd elementów - a - po najechaniu kursorem myszki na element - li */
+      #submenu > li:hover > a
+      {
+           color:#000; 
+        background-color:#F0F0F0;
+        background-image:linear-gradient(#FFF, #EEE, #d0d2f5);
+
+        
+      }
+
+
+
+
+
+
+
+
+
+  
+
+
+
+      /* -------------------- ROZWIJANA CZĘŚĆ MENU CSS -------------------- */
+      /* wygląd elementów - li - rodzica każdej części rozwijanej menu CSS */
+      #submenu > li {
+        position:relative;
+        
+      }
+
+            /* wygląd elementów - ul */
+ 
+
+
+
+
+      /* wygląd elementów - ul po najechaniku myszką*/ 
+      #submenu > li > ul {
+        
+        width:100%;
+        display:none;
+        position:absolute;
+        z-index:1;
+        margin:0;
+        padding:0;
+        list-style-type:none;
+        background-color:#FFF;/*  kolor po najechaniu kursorem */
+      }
+
+      /* wygląd elementów - ul - po najechaniu kursorem myszki na element - li */
+      #submenu > li:hover > ul {
+        display:block;
+        box-shadow:0 -4px 4px -4px blue, 0 4px 4px -4px #AAA;
+      }
+
+   
+      
+
+      /* wygląd elementów - a */
+      #submenu > li > ul > li > a {
+        display:block;
+        text-decoration:none;
+        padding:10px;
+        color:#000;
+      
+      }
+
+
+       #submenu > li > a {
+        display:block;
+        text-decoration:none;
+        padding:10px;
+        color:#000;
+      }
+
+      /* wygląd elementów - a - po najechaniu kursorem myszki na element - li */
+      #submenu > li > ul > li:hover > a {
+        color:#000; 
+        background-color:#F0F0F0;
+        background-image:linear-gradient(#FFF, #EEE, #FFF);
+      }
+
