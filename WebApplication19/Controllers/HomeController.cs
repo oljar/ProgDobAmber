@@ -9,12 +9,17 @@ namespace WebApplication19.Controllers
 {
     public class HomeController : Controller
     {
+
+
+        
         public ActionResult Automatic()
 
         {
-            ViewBag.Message = "Dobór Automatyczny";
+           ViewBag.Message = "Dobór Automatyczny";
             return View();
         }
+
+      
 
 
 
@@ -48,7 +53,7 @@ namespace WebApplication19.Controllers
 
            
 
-            int n = parameters.Typoszereg + parameters.Wymiennik + parameters.Montaz + parameters.WydNom;    //  n odpowiada za wybór  centrali
+            int n = (int)parameters.Typoszereg + parameters.Wymiennik + parameters.Montaz + parameters.WydNom;    //  n odpowiada za wybór  centrali
 
 
 
