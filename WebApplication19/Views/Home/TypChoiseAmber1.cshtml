@@ -9,29 +9,34 @@
 
 
 
-<div class="distance">
+     <div class="distance">
 
-<P> Wybierz wymiennik : 
+        <h4> Typ wymiennika:  </h4>
  
-           @Html.DropDownListFor(m => m.Wymiennik,
-         new SelectList(
+                @Html.DropDownListFor(m => m.Wymiennik,
+                new SelectList(
 
-                     new List<Object> {
-                       new  { value = 0, text = "krzyżowy" },
-                       new  { value = 20 , text = "przeciwprądowy"},
+                               new List<Object> {
+                               new  { value = 0, text = "krzyżowy" },
+                               new  { value = 20 , text = "przeciwprądowy"},
 
-                       new  { value = 40 , text = "obrotowy"},
-                  },
-                "value",
-                "text",
-                1
-         )
-      )
-  </P>
+                               new  { value = 40 , text = "obrotowy"},
+                        },
+                        "value",
+                        "text",
+                        1
+                ),
+                "Wybierz",
+                    new { @class = "form-control" }
+            )
+       
+         
+    </div>
 
-</div>
-   <div class="distance">
-      <P> Wybierz sposób montażu : 
+
+
+   <div class="distance" >  
+      <h4> Wybierz sposób montażu : </h4>
        
            @Html.DropDownListFor(m => m.Montaz,
          new SelectList(
@@ -39,33 +44,43 @@
                      new List<Object> {
                        new  { value = 0, text = "Stojący" },
                        new  { value = 10 , text = "Podwieszany"},
-
-                    
+              
                   },
                 "value",
                 "text",
                 1
-         )
+         ),
+          "Wybierz",
+                    new { @class = "form-control" }
       )
      
- 
-        </P>
+
     </div>
 
 
 
+    <div class="distance">
+        
 
+            <h4> Podaj zakładany wydatek centrali [m3/h] :</h4>
+                
+                     @Html.TextBoxFor(m => m.Wydatek,
+                   
+                    new { @class = "form-control" })    
+
+    </div>
 
 
     <div class="distance">
 
-        <p> Podaj zakładany wydatek centrali [m3/h] : @Html.TextBoxFor(m => m.Wydatek)</p>
+             <h4> Podaj opór instalacji [Pa] :</h4>
 
-    </div class="distance">
-
-
-    <div class="distance">
-         <p> Podaj opór instalacji [Pa] : @Html.TextBoxFor(m => m.Sprez)</P>
+                      @Html.TextBoxFor(m => m.Sprez,
+                     new { @class = "form-control" }) 
+                 
+                 
+        
+        
     </div>
 
 
