@@ -1,7 +1,111 @@
 ﻿
+
+@model WebApplication19.Models.Parameters
+
 @{
     ViewBag.Title = "ModelChoiseAmberRoof";
 }
 
-<h2>ModelChoiseAmberRoof</h2>
+
+
+
+@using (Html.BeginForm("TypChoiseAmberRoof", "Home", FormMethod.Post))
+{
+
+     @Html.ValidationSummary()
+     <div class="distance">
+
+        <h4> Typ wymiennika:  </h4>
+
+                
+ 
+                @Html.DropDownListFor(m => m.Wymiennik,
+         new SelectList(
+
+                        new List<Object> {
+                              
+
+                               new  { value = 40 , text = "obrotowy"},
+                 },
+                 "value",
+                 "text",
+                 1
+         ),
+         "Wybierz",
+             new { @class = "form-control" }
+     )
+       
+         
+    </div>
+
+
+
+   <div class="distance" >  
+      <h4> Wybierz sposób montażu : </h4>
+       
+           @Html.DropDownListFor(m => m.Montaz,
+       new SelectList(
+
+                   new List<Object> {
+                       new  { value = 0, text = "Stojący" },
+                    
+
+                },
+              "value",
+              "text",
+              1
+       ),
+        "Wybierz",
+                  new { @class = "form-control" }
+    )
+     
+
+    </div>
+
+
+
+    <div class="distance">
+        
+
+            <h4> Podaj zakładany wydatek centrali [m3/h] :</h4>
+                
+                     @Html.TextBoxFor(m => m.Wydatek,
+
+        new { @class = "form-control" })    
+
+    </div>
+
+
+    <div class="distance">
+
+             <h4> Podaj opór instalacji [Pa] :</h4>
+
+                      @Html.TextBoxFor(m => m.Sprez,
+        new { @class = "form-control" }) 
+                 
+                 
+        
+        
+    </div>
+
+
+
+
+
+
+
+
+
+    <input type="submit" value="Wykres" />
+
+    <p>
+ 
+
+
+    
+    </P>
+
+
+}
+
 

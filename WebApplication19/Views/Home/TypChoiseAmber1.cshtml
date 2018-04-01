@@ -2,33 +2,36 @@
 
 @model WebApplication19.Models.Parameters
 
-
 @{
-    ViewBag.Title = "TypChoiseAmber1";
+    ViewBag.Title = "ModelChoiseAmer1";
 }
 
+@using (Html.BeginForm("TypChoiseAmber1", "Home", FormMethod.Post))
+{
 
-
+     @Html.ValidationSummary()
      <div class="distance">
 
         <h4> Typ wymiennika:  </h4>
+
+                
  
                 @Html.DropDownListFor(m => m.Wymiennik,
-                new SelectList(
+         new SelectList(
 
-                               new List<Object> {
+                        new List<Object> {
                                new  { value = 0, text = "krzyżowy" },
                                new  { value = 20 , text = "przeciwprądowy"},
 
                                new  { value = 40 , text = "obrotowy"},
-                        },
-                        "value",
-                        "text",
-                        1
-                ),
-                "Wybierz",
-                    new { @class = "form-control" }
-            )
+                 },
+                 "value",
+                 "text",
+                 1
+         ),
+         "Wybierz",
+             new { @class = "form-control" }
+     )
        
          
     </div>
@@ -39,20 +42,20 @@
       <h4> Wybierz sposób montażu : </h4>
        
            @Html.DropDownListFor(m => m.Montaz,
-         new SelectList(
+       new SelectList(
 
-                     new List<Object> {
+                   new List<Object> {
                        new  { value = 0, text = "Stojący" },
                        new  { value = 10 , text = "Podwieszany"},
-              
-                  },
-                "value",
-                "text",
-                1
-         ),
-          "Wybierz",
-                    new { @class = "form-control" }
-      )
+
+                },
+              "value",
+              "text",
+              1
+       ),
+        "Wybierz",
+                  new { @class = "form-control" }
+    )
      
 
     </div>
@@ -65,8 +68,8 @@
             <h4> Podaj zakładany wydatek centrali [m3/h] :</h4>
                 
                      @Html.TextBoxFor(m => m.Wydatek,
-                   
-                    new { @class = "form-control" })    
+
+        new { @class = "form-control" })    
 
     </div>
 
@@ -76,7 +79,7 @@
              <h4> Podaj opór instalacji [Pa] :</h4>
 
                       @Html.TextBoxFor(m => m.Sprez,
-                     new { @class = "form-control" }) 
+        new { @class = "form-control" }) 
                  
                  
         
@@ -84,10 +87,10 @@
     </div>
 
 
-      
 
 
-    
+
+
 
 
 
@@ -99,11 +102,6 @@
 
     
     </P>
-    
 
 
-
-
-   
-
-
+}

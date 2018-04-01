@@ -10,15 +10,23 @@ namespace WebApplication19.Models
 { 
     public class Parameters
     {
+        [Required(ErrorMessage = "Proszę podać wartość liczbową w [m3/h] ")]
         public int Wydatek { get; set; }
+
+        [Required(ErrorMessage = "Proszę podać wartość liczbową w [m3/h] ")]
         public int Sprez { get; set; }
+
         public int Centrala { get; set; }
 
 
         public TypList Typoszereg { get; set; }
 
         public int Wymiennik { get; set; }
+
+
+        [Required(ErrorMessage = "Proszę podać wartość liczbową w [m3/h] ")]
         public int WydNom { get; set; }
+
         public int Montaz { get; set; }
 
 
