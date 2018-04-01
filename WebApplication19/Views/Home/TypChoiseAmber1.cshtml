@@ -1,0 +1,94 @@
+﻿
+
+@model WebApplication19.Models.Parameters
+
+
+@{
+    ViewBag.Title = "TypChoiseAmber1";
+}
+
+
+
+<div class="distance">
+
+<P> Wybierz wymiennik : 
+ 
+           @Html.DropDownListFor(m => m.Wymiennik,
+         new SelectList(
+
+                     new List<Object> {
+                       new  { value = 0, text = "krzyżowy" },
+                       new  { value = 20 , text = "przeciwprądowy"},
+
+                       new  { value = 40 , text = "obrotowy"},
+                  },
+                "value",
+                "text",
+                1
+         )
+      )
+  </P>
+
+</div>
+   <div class="distance">
+      <P> Wybierz sposób montażu : 
+       
+           @Html.DropDownListFor(m => m.Montaz,
+         new SelectList(
+
+                     new List<Object> {
+                       new  { value = 0, text = "Stojący" },
+                       new  { value = 10 , text = "Podwieszany"},
+
+                    
+                  },
+                "value",
+                "text",
+                1
+         )
+      )
+     
+ 
+        </P>
+    </div>
+
+
+
+
+
+
+    <div class="distance">
+
+        <p> Podaj zakładany wydatek centrali [m3/h] : @Html.TextBoxFor(m => m.Wydatek)</p>
+
+    </div class="distance">
+
+
+    <div class="distance">
+         <p> Podaj opór instalacji [Pa] : @Html.TextBoxFor(m => m.Sprez)</P>
+    </div>
+
+
+      
+
+
+    
+
+
+
+    <input type="submit" value="Wykres" />
+
+    <p>
+ 
+
+
+    
+    </P>
+    
+
+
+
+
+   
+
+

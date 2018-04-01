@@ -12,14 +12,45 @@ namespace WebApplication19.Controllers
 
 
         
-        public ActionResult Automatic()
+        public ActionResult ProductChoise()
 
         {
-           ViewBag.Message = "Dobór Automatyczny";
+           ViewBag.Message = "Dobór Automatyczny - Wybór poduktu";
+
+            
             return View();
         }
 
-      
+
+        public ActionResult TypChoiseAmber1()
+
+        {
+            ViewBag.Message = "Dobór Automatyczny - Amber 1 ";
+
+
+            return View();
+        }
+
+        public ActionResult TypChoiseAmber2()
+
+        {
+            ViewBag.Message = "Dobór Automatyczny - Amber 2 ";
+
+
+            return View();
+        }
+
+        public ActionResult TypChoiseAmberRoof()
+
+        {
+            ViewBag.Message = "Dobór Automatyczny - Amber 1 - Wersja Dachowa";
+
+
+            return View();
+        }
+
+
+
 
 
 

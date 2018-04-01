@@ -22,21 +22,31 @@ namespace WebApplication19.Models
         public int Montaz { get; set; }
 
 
+    
+    
+
     }
 
 
     public enum TypList
 
     {
-        [Display(Name ="Amber 1 Próba")]
+        [Display(Name ="Amber 1")]
         Amber_1 = 0,
 
-        [Display(Name="Amber 2 Proba")]
+        [Display(Name="Amber 2")]
         Amber_2 = 100,
 
-        [Display(Name="Amber 1 Dach")]
+        [Display(Name="Amber1 wersja dachowa")]
         Amber_1_Dach = 200,
         
 
     }
+    
+
+
+
+
+
+
 }

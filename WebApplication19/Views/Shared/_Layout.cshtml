@@ -55,7 +55,7 @@
    <ol id="submenu">
          <li><a>Program doborowy</a>
       <ul>
-          <li><a>@Html.ActionLink("Dobór automatyczny","Automatic","Home")</a></li>
+          <li><a>@Html.ActionLink("Dobór automatyczny","ProductChoise","Home")</a></li>
           <li><a>@Html.ActionLink("Dobór ręczny", "Index", "Home")</a></li>
           
       </ul>
@@ -93,10 +93,15 @@
                     
 
 
-             
+      
        <div id="stripe">
+
+           
+        
          <div id="stripe-text">@ViewBag.Message</div>
-       </div>
+           </div>
+
+    
   
 
    
@@ -118,4 +123,3 @@
     @RenderSection("scripts", required: false)
 </body>
 </html>
-3
