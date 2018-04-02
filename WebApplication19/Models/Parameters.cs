@@ -29,7 +29,7 @@ namespace WebApplication19.Models
 
         public int Montaz { get; set; }
 
-        public double X = 0.9;  // współczynnik bezpieczeństwa
+        public double X = 1;  // współczynnik bezpieczeństwa
 
         public int MaxSprez = 440;
 
