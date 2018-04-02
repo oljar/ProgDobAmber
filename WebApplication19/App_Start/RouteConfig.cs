@@ -14,7 +14,7 @@ namespace WebApplication19
             routes.MapRoute(
              "Default",
              "{controller}/{action}/{id}",
-             new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+             new { controller = "Home", action = "ProductChoise", id = UrlParameter.Optional },
              new[] { "WebApplication19.Controllers" }
        );
 

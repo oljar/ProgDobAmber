@@ -271,11 +271,12 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Kontakt.cshtml" />
     <Content Include="Views\Home\Wykres.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Index1.cshtml" />
     <Content Include="Views\Home\ProductChoise.cshtml" />
     <Content Include="Views\Home\TypChoiseAmber1.cshtml" />
     <Content Include="Views\Home\TypChoiseAmber2.cshtml" />
     <Content Include="Views\Home\TypChoiseAmberRoof.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

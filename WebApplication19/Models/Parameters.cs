@@ -13,7 +13,7 @@ namespace WebApplication19.Models
         [Required(ErrorMessage = "Proszę podać wartość liczbową w [m3/h] ")]
         public int Wydatek { get; set; }
 
-        [Required(ErrorMessage = "Proszę podać wartość liczbową w [m3/h] ")]
+        [Required(ErrorMessage = "Proszę podać wartość liczbową w [Pa] ")]
         public int Sprez { get; set; }
 
         public int Centrala { get; set; }
