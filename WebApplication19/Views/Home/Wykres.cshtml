@@ -750,21 +750,7 @@
      }
 
      
-     var Dyst1
-
-     var Kom1
-
-     if (wydatek < VolumeMin(ChoiseAHU ))
-     {
-         Kom1 = ' UWAGA : Nieprawidłowy wydatek dla centrali ' + Opis;
-         Dyst1 = '<br />';
-     }
-        else
-        {
-
-         Kom1 = '';
-         Dyst1 = '';
-        }
+    
 
 
 
@@ -829,7 +815,7 @@
            $.jqplot('chart1', [powPoints1, powPoints2],
               {
 
-                  title: '<br />' + Opis + Dyst1 + Kom1 + Dyst2 + Kom2 + Dyst3 + Kom3 + Dyst4 + Kom4,
+                  title: '<br />' + Opis + Dyst2 + Kom2 + Dyst3 + Kom3 + Dyst4 + Kom4,
                   axes: {
                       xaxis: {
                           label: 'Wydatek [ m3/h]',

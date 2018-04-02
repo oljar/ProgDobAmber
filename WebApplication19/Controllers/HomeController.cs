@@ -40,12 +40,77 @@ namespace WebApplication19.Controllers
         [HttpPost]
         public ActionResult TypChoiseAmber1(Parameters parameters)
 
-
+            
         {
+            int WydNom=0;
+            string attention = "";
 
-            int Nominal = 1;
 
-            int n =  0 + parameters.Wymiennik + parameters.Montaz + Nominal ;    //  n odpowiada za wybór  centrali
+
+            if (parameters.MaxSprez < parameters.Sprez)         // Zabezpieczenie Spręż za duży
+
+            {
+                WydNom = 1000000;  
+                attention = " - Zbyt wysoki spręż ";
+                goto Exit;
+
+            }
+
+
+
+
+                if (parameters.Wymiennik == 0 && parameters.Montaz == 0)   // dobór centrali A1 - K
+
+                {
+
+                    if (parameters.X * parameters.CA1K300(parameters.Wydatek) > parameters.Sprez)
+                    {
+                        WydNom = 1; //  model K300
+                        goto Exit;
+                    }
+
+                    else if (parameters.X * parameters.CA1K500(parameters.Wydatek) > parameters.Sprez)
+                    {
+                        WydNom = 2; //  model K500
+                        goto Exit;
+                    }
+
+
+                    else if (parameters.X * parameters.CA1K800(parameters.Wydatek) > parameters.Sprez)
+                    {
+                        WydNom = 3; //  model K800
+                        goto Exit;
+                    }
+
+                    else if (parameters.X * parameters.CA1K1200(parameters.Wydatek) > parameters.Sprez)
+                    {
+                        WydNom = 4; //  model K1200
+                        goto Exit;
+                    }
+
+
+                    else
+
+                    {
+                        WydNom = 1000000;     // Zabezpieczenie param za duże
+                        attention = " - Zbyt wysoke parametry ";
+                    }
+                }
+
+
+          
+
+
+
+
+
+
+
+        Exit:
+
+
+
+             int n = 0 + parameters.Wymiennik + parameters.Montaz + WydNom;    //  n odpowiada za wybór  centrali
 
 
 
@@ -59,12 +124,14 @@ namespace WebApplication19.Controllers
 
             int b = parameters.Wydatek;
 
-
+           
 
             ViewBag.Sprez = a;
             ViewBag.Wydatek = b;
             ViewBag.Centrala = n;
 
+
+            
            
 
 
@@ -74,7 +141,7 @@ namespace WebApplication19.Controllers
 
             if (ModelState.IsValid)
             {
-                ViewBag.Message = "Dobór Automatyczny - Amber 1 ";
+                ViewBag.Message ="Dobór Automatyczny - Amber 1" + attention;
                 return View("Wykres", parameters);
             }
             else
