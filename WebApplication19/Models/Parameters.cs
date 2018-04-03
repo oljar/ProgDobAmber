@@ -31,7 +31,13 @@ namespace WebApplication19.Models
 
         public double X = 1;  // współczynnik bezpieczeństwa
 
-        public int MaxSprez = 440;
+        public int MaxSprez = 440;  // Dop sręż
+
+        public int VMax300 = 500; // Dop wydatek dla 300
+        public int VMax500 = 650;  // Dop wydatek dla 500
+        public int VMax800 = 1050;  // Dop wydatek dla 800
+        public int VMax1200 = 1600;  // Dop wydatek dla 1200
+
 
 
 
@@ -54,6 +60,7 @@ namespace WebApplication19.Models
         public double CA1K800(int i)
         {
 
+          
             return 1000 * (3.3399 * Math.Pow(0.001 * i, 4) - 10.986 * Math.Pow(0.001 * i, 3) + 12.887 * Math.Pow(0.001 * i, 2) - 7.0441 * 0.001 * i + 1.9284);
 
         }
@@ -64,7 +71,7 @@ namespace WebApplication19.Models
         }
 
 
-
+       
 
         // wykesy A1 KP
 
