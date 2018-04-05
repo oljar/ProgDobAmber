@@ -51,7 +51,14 @@ namespace WebApplication19.Controllers
 
             int Size = parameters.WydNom;  // Wilekość centrali
 
+
+
             int n = 0 + parameters.Wymiennik + parameters.Montaz + Size;    //  n odpowiada za wybór  centrali
+
+            if (n == 4 || n == 14)                                                 //  zmiana dla modeli K-1200
+            {
+                n = n + 1;
+            }
 
             int a = parameters.Sprez;
 
@@ -64,7 +71,7 @@ namespace WebApplication19.Controllers
             if (parameters.Sprez > parameters.MaxSprez)
             {
                 n = 0;
-                attention = " -  - Spręż dyspozycyjny przekroczono ";
+                attention = " - Spręż dyspozycyjny przekroczono ";
 
             }
 

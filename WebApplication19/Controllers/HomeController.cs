@@ -399,7 +399,7 @@ namespace WebApplication19.Controllers
             if (parameters.Sprez > parameters.MaxSprez)
             {
                 n = 0;
-                attention = " -  - Spręż dyspozycyjny przekroczono ";
+                attention = " - Spręż dyspozycyjny przekroczono ";
 
             }
 

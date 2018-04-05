@@ -527,13 +527,13 @@
 
             var Volume = {                                 // zmiana zakresów pomiarów
 
-         min300: 200,
+         min300: 180,
          max300: 500,
          min500: 350,
          max500: 650,
          min800: 600,
          max800: 1050,
-         min1200: 1000,
+         min1200: 880,
          minK1200: 800,
          max1200: 1600,
 
@@ -726,19 +726,19 @@
 
 
          case 121:                             //   A2-P
-             Opis = 'Amber 2  P-300-0-0';
+             Opis = 'Amber 2  P-300';
              break;
 
          case 122:                             
-             Opis = 'Amber 2  P-500-0-0';
+             Opis = 'Amber 2  P-500';
              break;
 
          case 123:                             
-             Opis = 'Amber 2  P-800-0-0';
+             Opis = 'Amber 2  P-800';
              break;
 
          case 124:                             
-             Opis = 'Amber 2  P-1200-0-0';
+             Opis = 'Amber 2  P-1200';
              break;
 
 
@@ -764,34 +764,20 @@
 
      }
         else
-         {
+     {
          Kom2 = '';
          Dyst2 = '';
-         }
+     }
 
 
-     var Kom3
-     var Dyst3
 
-      if (sprez > MainChart(wydatek, ChoiseAHU))
-      {
-          Kom3 = 'UWAGA : Podany punkt pracy poza zakresem centrali ' + Opis;
-          window.alert('UWAGA : Podany punkt pracy poza zakresem centrali ' + Opis);
-          Dyst3 = '<br />';
-
-     
-      }
-      else
-      {
-          Kom3 = '';
-          Dyst3 = '';
-      }
+    
 
 
      var Kom4
      var Dyst4
 
-      if (sprez < MainChart(wydatek, ChoiseAHU) && wydatek < VolumeMax(ChoiseAHU) && wydatek > VolumeMin(ChoiseAHU ) )
+     if (sprez < MainChart(wydatek, ChoiseAHU) && (VolumeMax(ChoiseAHU)> wydatek) && (VolumeMin(ChoiseAHU) < wydatek))
       {
           Kom4 = 'Punkt pracy w zakresie centrali ' + Opis;
           Dyst4 = '<br />';
@@ -800,8 +786,9 @@
       }
       else
       {
-          Kom4 = '';
-          Dyst4 = '';
+         Kom4 = 'Uwaga : Podany punkt pracy poza zakresem centrali';
+          window.alert('UWAGA : Podany punkt pracy poza zakresem centrali ' + Opis);
+          Dyst4 = '<br />';
       }
 
 
@@ -815,7 +802,7 @@
            $.jqplot('chart1', [powPoints1, powPoints2],
               {
 
-                  title: '<br />' + Opis + Dyst2 + Kom2 + Dyst3 + Kom3 + Dyst4 + Kom4,
+                  title: '<br />' + Opis + Dyst2 + Kom2 + Dyst4 + Kom4,
                   axes: {
                       xaxis: {
                           label: 'Wydatek [ m3/h]',
