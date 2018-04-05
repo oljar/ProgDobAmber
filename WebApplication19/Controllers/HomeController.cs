@@ -685,7 +685,7 @@ namespace WebApplication19.Controllers
         public ActionResult Kontakt()
 
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Kontakt";
 
             return View();
         }

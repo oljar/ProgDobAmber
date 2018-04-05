@@ -1,0 +1,851 @@
+﻿@{
+    ViewBag.Title = "Wykres";
+
+
+    var sprez = ViewBag.Sprez as IEnumerable<WebApplication19.Models.Parameters>;
+    var wydatek = ViewBag.Sydatek as  IEnumerable<WebApplication19.Models.Parameters>;
+    var centrala = ViewBag.Centrala as IEnumerable<WebApplication19.Models.Parameters>;
+    System.Web.Script.Serialization.JavaScriptSerializer ser = new System.Web.Script.Serialization.JavaScriptSerializer();
+
+
+
+    var spr= ser.Serialize(ViewBag.Sprez);                       //serializacja danych
+    var wyd = ser.Serialize(ViewBag.Wydatek);     
+    var cen = ser.Serialize(ViewBag.Centrala);
+
+
+  }
+
+
+    
+         
+  <div id="chart1" style="height:400px;width:600px; "></div>  
+     
+
+
+ <script type="text/javascript">
+
+
+
+
+
+    //  ChoiseAHU 
+
+    //  1  K-300
+    //  2  K-500
+    //  3  K-800
+    //  5  K-1200
+
+    //  11  KP-300
+    //  12  KP-500
+    //  13  KP-800
+    //  15  KP-1200
+
+
+
+    //  21  P-300
+    //  22  P-500
+    //  23  P-800
+    //  24  P-1200
+
+    //  31  PP-300
+    //  32  PP-500
+    //  33  PP-800
+    //  34  PP-1200
+
+
+
+    //  41  O-300
+    //  42  O-500
+    //  43  O-800
+    //  44  o-1200
+
+
+    //  51  OP-300
+    //  52  OP-500
+    //  53  OP-800
+    //  54  OP-1200
+
+
+    var ChoiseAHU = @cen;             // wybór centrali
+     
+    
+
+    
+//***********************************************************************************************************************************//
+//***********************************************************************************************************************************//
+
+
+            function ChartK300(i)                                     //  funkcje krzywych K
+            {
+
+                return 1000 * (-1.9314 * Math.pow(0.001 * i, 3) + 1.8602 * Math.pow(0.001 * i, 2) - 1.7862 * 0.001 * i + 0.7071);
+
+            }
+
+
+            function ChartK500(i)
+            {
+                
+                return 1000 * (-4.2069 * Math.pow(0.001 * i, 3) + 5.7547 * Math.pow(0.001 * i, 2) - 3.6535 * 0.001 * i + 1.1954);
+            }
+
+
+            function ChartK800(i)
+            {
+             
+                 return 1000 * (3.3399 * Math.pow(0.001 * i, 4) - 10.986 * Math.pow(0.001 * i, 3) + 12.887 * Math.pow(0.001 * i, 2) - 7.0441 * 0.001 * i + 1.9284);
+            }
+
+
+            function ChartK1200(i)
+
+            {
+              
+                return 1000 * (-0.0909 * Math.pow(0.001 * i, 3) + 0.2342 * Math.pow(0.001 * i, 2) - 0.5916 * 0.001 * i + 0.7698);
+            }
+
+
+            //***********************************************************************************************************************************//
+
+
+
+
+            function ChartKP300(i)                              //  funkcje krzywych KP
+            {
+                
+                return 1000 * (-0.3452 * Math.pow(0.001 * i, 2) - 1.1452 * 0.001 * i + 0.6244);
+            }
+
+            function ChartKP500(i)
+            {
+              
+                return 1000 * (-2.7106 * Math.pow(0.001 * i, 3) + 3.7524 * Math.pow(0.001 * i, 2) - 2.8432 * 0.001 * i + 1.0681);
+
+            }
+
+            function ChartKP800(i)
+            {
+                
+                return 1000 * (-0.8613 * Math.pow(0.001 * i, 3) + 1.7783 * Math.pow(0.001 * i, 2) - 1.9438 * 0.001 * i + 1.1125);
+            }
+
+            function ChartKP1200(i)
+            {
+
+                
+                return 1000 * (0.3224 * Math.pow(0.001 * i, 3) - 1.4275 * Math.pow(0.001 * i, 2) + 1.6332 * 0.001 * i - 0.2282);
+            }
+
+
+            //***********************************************************************************************************************************//
+
+
+            function ChartP300(i)                             //  funkcje krzywych P 
+            {
+
+                return 1000 * (-5.1575 * Math.pow(0.001 * i, 3) + 5.2417 * Math.pow(0.001 * i, 2) - 2.8509 * 0.001 * i + 0.8068);
+            }
+
+            function ChartP500(i)
+            {
+
+                return 1000 * (-13.38 * Math.pow(0.001 * i, 4) + 32.431 * Math.pow(0.001 * i, 3) - 28.047 * Math.pow(0.001 * i, 2) + 9.2137 * 0.001 * i - 0.5203);
+       
+             }
+
+            function ChartP800(i)
+            {
+
+                return 1000 * (-0.7303 * Math.pow(0.001 * i, 3) + 1.1888 * Math.pow(0.001 * i, 2) - 1.2193 * 0.001 * i + 0.8381);
+            }
+
+            function ChartP1200(i)
+            {
+                
+                return 1000 * (1.4605 * Math.pow(0.001 * i, 4) - 7.5065 * Math.pow(0.001 * i, 3) + 13.786 * Math.pow(0.001 * i, 2) - 11.166 * 0.001 * i + 3.7994);
+            }
+
+            //***********************************************************************************************************************************//
+
+            function ChartPP300(i)                             //  funkcje krzywych PP
+            {
+                
+                return 1000 * (-3.4876 * Math.pow(0.001 * i, 3) + 3.372 * Math.pow(0.001 * i, 2) - 2.2467 * 0.001 * i + 0.7324);
+       
+            }
+
+            function ChartPP500(i)
+            {
+                return 1000 * (-2.0822 * Math.pow(0.001 * i, 3) + 2.9417 * Math.pow(0.001 * i, 2) - 2.4398 * 0.001 * i + 1.0298);
+            }
+
+            function ChartPP800(i)
+            {
+                
+                return 1000 * (2.6681 * Math.pow(0.001 * i, 4) - 8.4583 * Math.pow(0.001 * i, 3) + 9.588 * Math.pow(0.001 * i, 2) - 5.3279 * 0.001 * i + 1.6119);
+            }
+
+            function ChartPP1200(i)
+            {
+               
+                return 1000 * (0.5369 * Math.pow(0.001 * i, 3) - 2.513 * Math.pow(0.001 * i, 2) + 3.2425 * 0.001 * i - 0.8961);
+            }
+
+
+            //***********************************************************************************************************************************//
+
+
+            function ChartO300(i)                               //  funkcje krzywych O
+            {
+              
+                return 1000 * (-4.3816 * Math.pow(0.001 * i, 3) + 4.9977 * Math.pow(0.001 * i, 2) - 2.7967 * 0.001 * i + 0.7945);
+            }
+
+
+
+            function ChartO500(i)
+            {
+               
+                return 1000 * (-3.2559 * Math.pow(0.001 * i, 3) + 4.3054 * Math.pow(0.001 * i, 2) - 2.8447 * 0.001 * i + 1.0457);
+            }
+
+
+
+            function ChartO800(i)
+            {
+            
+                return 1000 * (4.1079 * Math.pow(0.001 * i, 4) - 13.678 * Math.pow(0.001 * i, 3) + 16.063 * Math.pow(0.001 * i, 2) - 8.5283 * 0.001 * i + 2.1345);
+       
+     }
+
+
+            function ChartO1200(i)
+            {
+               
+                return 1000 * (0.8833 * Math.pow(0.001 * i, 4) - 4.9036 * Math.pow(0.001 * i, 3) + 9.5619 * Math.pow(0.001 * i, 2) - 8.3147 * 0.001 * i + 3.1681);
+       
+     }
+
+            //***********************************************************************************************************************************//
+
+
+            function ChartOP300(i)                              //  funkcje krzywych OP
+            {
+               
+                return 1000 * (-2.0802 * Math.pow(0.001 * i, 3) + 2.2249 * Math.pow(0.001 * i, 2) - 1.9346 * 0.001 * i + 0.679);
+            }
+
+
+            function ChartOP500(i)
+            {
+           
+                return 1000 * (-0.5081 * Math.pow(0.001 * i, 2) - 0.6226 * 0.001 * i + 0.6992);
+            }
+
+
+            function ChartOP800(i)
+            {
+                return 1000 * (-1.1701 * Math.pow(0.001 * i, 3) + 2.2308 * Math.pow(0.001 * i, 2) - 2.0069 * 0.001 * i + 1.0116);
+            }
+
+
+            function ChartOP1200(i)
+
+            {
+                return 1000 * (0.25 * Math.pow(0.001 * i, 3) - 1.0786 * Math.pow(0.001 * i, 2) + 0.9804 * 0.001 * i + 0.2184);
+       
+            }
+
+
+
+            //***********************************************************************************************************************************//
+            
+
+            function ChartA2P300(i)                          //  funkcje krzywych A2 P300(i)
+
+
+            {
+                return 1000 * (-4.4627 * Math.pow(0.001 * i, 3) + 4.5843 * Math.pow(0.001 * i, 2) - 2.6578 * 0.001 * i + 0.7903);
+       
+            }
+
+            function ChartA2P500(i) 
+            {
+                return 1000 * (1.3998 * Math.pow(0.001 * i, 3) - 1.7805 * Math.pow(0.001 * i, 2) - 0.3709 * 0.001 * i + 0.748);
+       
+            }
+
+
+            function ChartA2P800(i) 
+            {
+                return 1000 * (-0.5654 * Math.pow(0.001 * i, 3) + 0.7544 * Math.pow(0.001 * i, 2) - 0.8446 * 0.001 * i + 0.7341);
+       
+            }
+
+
+            function ChartA2P1200(i) 
+            {
+                return 1000 * (0.3679 * Math.pow(0.001 * i, 3) - 1.9509 * Math.pow(0.001 * i, 2) + 2.6396 * 0.001 * i - 0.6843);
+       
+            }
+
+
+        
+             //***********************************************************************************************************************************//
+          
+
+            function ChartDO1200(i)   //  funkcje krzywych A1 DO1200(i)
+            {
+                return 1000 * (0.8833 * Math.pow(0.001 * i, 4) - 4.9036 * Math.pow(0.001 * i, 3) + 9.5619 * Math.pow(0.001 * i, 2) - 8.3147 * 0.001 * i + 3.1681);
+       
+            }
+
+
+
+            //***********************************************************************************************************************************//
+            //***********************************************************************************************************************************//
+
+
+
+            function MainChart(i, ChoiseAHU) {                     // zmiana  wykresów  Amber K
+                if (ChoiseAHU == 1) {
+
+                    return ChartK300(i);
+                }
+
+                else if (ChoiseAHU == 2) {
+
+                    return ChartK500(i);
+                }
+
+                else if (ChoiseAHU == 3) {
+                    return ChartK800(i);
+
+                }
+
+                else if (ChoiseAHU == 5) {
+                    return ChartK1200(i);
+
+                }
+
+
+
+                //***********************************************************************************************************************************//
+
+
+
+
+                else if (ChoiseAHU == 11)                                // zmiana  wykresów  Amber KP
+
+                {
+                    return ChartKP300(i);
+
+                }
+
+                else if (ChoiseAHU == 12)
+                {
+
+                    return ChartKP500(i);
+                }
+
+                else if (ChoiseAHU == 13)
+                {
+                    return ChartKP800(i);
+
+                }
+
+                else if (ChoiseAHU == 15)
+                {
+                    return ChartKP1200(i);
+                }
+
+                //***********************************************************************************************************************************//
+
+
+                else if (ChoiseAHU == 21)                                // zmiana  wykresów  Amber P
+
+                {
+
+                    return ChartP300(i);
+
+                }
+
+                else if (ChoiseAHU == 22)
+                {
+                    return ChartP500(i);
+                }
+
+                else if (ChoiseAHU == 23)
+                {
+                    return ChartP800(i);
+
+                }
+
+                else if (ChoiseAHU == 24)
+                {
+                    return ChartP1200(i);
+                }
+
+                //***********************************************************************************************************************************//
+
+                else if (ChoiseAHU == 31)                                // zmiana  wykresów  Amber PP
+
+                {
+                    return ChartKP300(i);
+
+                }
+
+                else if (ChoiseAHU == 32)
+                {
+                    return ChartKP500(i);
+                }
+
+                else if (ChoiseAHU == 33)
+                {
+                    return ChartKP800(i);
+
+                }
+
+                else if (ChoiseAHU == 34)
+                {
+                    return ChartKP1200(i);
+                }
+
+
+
+
+                //***********************************************************************************************************************************//
+
+
+                else if (ChoiseAHU == 41)                                // zmiana  wykresów  Amber O
+
+                {
+                    return ChartO300(i);
+
+                }
+
+                else if (ChoiseAHU == 42)
+                {
+                    return ChartO500(i);
+                }
+
+                else if (ChoiseAHU == 43)
+                {
+                    return ChartO800(i);
+
+                }
+
+                else if (ChoiseAHU == 44)
+                {
+                    return ChartO1200(i);
+                }
+
+
+
+                //***********************************************************************************************************************************//
+
+
+
+                else if (ChoiseAHU == 51)                                // zmiana  wykresów  Amber OP
+
+                {
+                    return ChartOP300(i);
+
+                }
+
+                else if (ChoiseAHU == 52)
+                {
+                    return ChartOP500(i);
+                }
+
+                else if (ChoiseAHU == 53)
+                {
+                    return ChartOP800(i);
+
+                }
+
+                else if (ChoiseAHU == 54)
+                {
+                    return ChartOP1200(i);
+                }
+
+                                                                    
+
+                //***********************************************************************************************************************************//
+
+                 else if (ChoiseAHU == 121)                              // zmiana  wykresów  Amber A2
+                {
+                    return ChartA2P300(i) 
+                }
+
+                 else if (ChoiseAHU == 122)
+                {
+                    return ChartA2P500(i)
+                }
+
+                 else if (ChoiseAHU == 123)
+                {
+                    return ChartA2P800(i)
+                }
+
+                 else if (ChoiseAHU == 124)
+                {
+                    return ChartA2P1200(i);
+                }
+
+                //***********************************************************************************************************************************//
+                                                                      // zmiana  wykresów  Amber Dachowy
+
+
+                 else if (ChoiseAHU == 244)
+                {
+                    return ChartDO1200(i)
+                }
+
+
+
+
+
+                //***********************************************************************************************************************************//
+
+                //***********************************************************************************************************************************//
+
+
+
+
+
+
+
+
+
+
+
+
+            }
+
+
+            var Volume = {                                 // zmiana zakresów pomiarów
+
+         min300: 200,
+         max300: 500,
+         min500: 350,
+         max500: 650,
+         min800: 600,
+         max800: 1050,
+         min1200: 1000,
+         minK1200: 800,
+         max1200: 1600,
+
+
+     }
+
+
+     //***********************************************************************************************************************************//
+
+            function VolumeMin(ChoiseAHU)                    // zmiana zakresów pomiarów Min
+            {
+                if (ChoiseAHU == 1 || ChoiseAHU == 11 || ChoiseAHU == 21 || ChoiseAHU == 31 || ChoiseAHU == 41 || ChoiseAHU == 51 || ChoiseAHU == 121 )
+                {
+                    return Volume.min300;
+
+                }
+
+
+                else if (ChoiseAHU == 2 || ChoiseAHU == 12 || ChoiseAHU == 22 || ChoiseAHU == 32 || ChoiseAHU == 42 || ChoiseAHU == 52 || ChoiseAHU == 122)
+                {
+                    return Volume.min500;
+                }
+
+
+                else if (ChoiseAHU == 3 || ChoiseAHU == 13 || ChoiseAHU == 23 || ChoiseAHU == 33 || ChoiseAHU == 43 || ChoiseAHU == 53 || ChoiseAHU == 123)
+
+                {
+                    return Volume.min800;
+                }
+
+                else if (ChoiseAHU == 24 || ChoiseAHU == 34 || ChoiseAHU == 44 || ChoiseAHU == 54 || ChoiseAHU == 124 || ChoiseAHU == 244 )
+                {
+                    return Volume.min1200;
+
+                }
+
+
+                else if (ChoiseAHU == 5 || ChoiseAHU == 15)
+                {
+                    return Volume.minK1200;
+                }
+
+            }
+
+
+            //***********************************************************************************************************************************//
+
+            function VolumeMax(ChoiseAHU)                      // zmiana zakresów pomiarów MAX
+            {
+                if (ChoiseAHU == 1 || ChoiseAHU == 11 || ChoiseAHU == 21 || ChoiseAHU == 31 || ChoiseAHU == 41 || ChoiseAHU == 51 || ChoiseAHU == 121)
+                {
+                    return Volume.max300;
+
+                }
+
+
+                else if (ChoiseAHU == 2 || ChoiseAHU == 12 || ChoiseAHU == 22 || ChoiseAHU == 32 || ChoiseAHU == 42 || ChoiseAHU == 52 || ChoiseAHU == 122)
+                {
+                    return Volume.max500;
+                }
+
+
+                else if (ChoiseAHU == 3 || ChoiseAHU == 13 || ChoiseAHU == 23 || ChoiseAHU == 33 || ChoiseAHU == 43 || ChoiseAHU == 53 || ChoiseAHU == 123)
+                {
+                    return Volume.max800;
+
+                }
+
+                else if (ChoiseAHU == 5 || ChoiseAHU == 15 || ChoiseAHU == 24 || ChoiseAHU == 34 || ChoiseAHU == 44 || ChoiseAHU ==54 || ChoiseAHU == 124 || ChoiseAHU == 244)
+                {
+                    return Volume.max1200;
+                }
+
+
+            }
+
+            //***********************************************************************************************************************************//
+            //***********************************************************************************************************************************//
+
+
+            var sprez =@spr;
+            var wydatek=@wyd;
+
+
+            var powPoints1 = []; 
+
+  for ( i = VolumeMin(ChoiseAHU) ; i < VolumeMax(ChoiseAHU) ; i+=1) {                           // puszowanie tabeli  wykresu 1 (punkt)
+      powPoints1.push([wydatek,sprez]); 
+  }
+
+        var powPoints2 = [];                          
+     for ( i = VolumeMin(ChoiseAHU); i < VolumeMax(ChoiseAHU) ; i += 1) {
+
+         powPoints2.push([i,MainChart(i,ChoiseAHU)]);           // puszowanie tabeli 2 (wykres)
+
+     }
+
+
+     var Opis                       // Opis górny
+
+     switch (ChoiseAHU)
+     {
+         case 1:
+             Opis = 'Amber 1  K-300';               //   A1-K
+             break;
+         case 2:
+             Opis = 'Amber 1  K-500';
+             break;
+
+         case 3:
+             Opis = 'Amber 1  K-800';
+             break;
+         case 5:
+             Opis = 'Amber 1  K-1200';
+             break;
+
+         case 11:
+             Opis = 'Amber 1  KP-300';             //   A1-KP
+             break;
+         case 12:
+             Opis = 'Amber 1  KP-500';
+             break;
+
+         case 13:
+             Opis = 'Amber 1  KP-800';
+             break;
+         case 15:
+             Opis = 'Amber 1  KP-1200';
+             break;
+
+
+         case 21:
+             Opis = 'Amber 1  P-300';               //   A1-P
+             break;
+         case 22:
+             Opis = 'Amber 1  P-500';
+             break;
+
+         case 23:
+             Opis = 'Amber 1  P-800';
+             break;
+         case 24:
+             Opis = 'Amber 1  P-1200';
+             break;
+
+         case 31:
+             Opis = 'Amber 1  PP-300';             //   A1-PP
+             break;
+         case 32:
+             Opis = 'Amber 1  PP-500';
+             break;
+
+         case 33:
+             Opis = 'Amber 1  PP-800';
+             break;
+         case 34:
+             Opis = 'Amber 1  PP-1200';
+             break;
+
+
+
+             
+         case 41:
+             Opis = 'Amber 1  O-300';               //   A1-O
+             break;
+         case 42:
+             Opis = 'Amber 1  O-500';
+             break;
+
+         case 43:
+             Opis = 'Amber 1  O-800';
+             break;
+         case 44:
+             Opis = 'Amber 1  O-1200';
+             break;
+
+         case 51:
+             Opis = 'Amber 1  OP-300';             //   A1-OP
+             break;
+         case 52:
+             Opis = 'Amber 1  OP-500';
+             break;
+
+         case 53:
+             Opis = 'Amber 1  OP-800';
+             break;
+         case 54:
+             Opis = 'Amber 1  OP-1200';
+             break;
+
+
+         case 121:                             //   A2-P
+             Opis = 'Amber 2  P-300-0-0';
+             break;
+
+         case 122:                             
+             Opis = 'Amber 2  P-500-0-0';
+             break;
+
+         case 123:                             
+             Opis = 'Amber 2  P-800-0-0';
+             break;
+
+         case 124:                             
+             Opis = 'Amber 2  P-1200-0-0';
+             break;
+
+
+         case 244:                             //   A1 DO
+             Opis = 'Amber 1 Wersja Dachowa DO-1200';
+             break;
+
+
+     }
+
+     
+    
+
+
+
+     var Dyst2
+     var Kom2 
+     if (wydatek > VolumeMax(ChoiseAHU))
+      {
+         Kom2 = ' UWAGA : Zbyt duży wydatek na centralę ' + Opis;
+         window.alert('UWAGA : Zbyt duży wydatek na centralę ' + Opis);
+         Dyst2 = '<br />';
+
+     }
+        else
+         {
+         Kom2 = '';
+         Dyst2 = '';
+         }
+
+
+     var Kom3
+     var Dyst3
+
+      if (sprez > MainChart(wydatek, ChoiseAHU))
+      {
+          Kom3 = 'UWAGA : Podany punkt pracy poza zakresem centrali ' + Opis;
+          window.alert('UWAGA : Podany punkt pracy poza zakresem centrali ' + Opis);
+          Dyst3 = '<br />';
+
+     
+      }
+      else
+      {
+          Kom3 = '';
+          Dyst3 = '';
+      }
+
+
+     var Kom4
+     var Dyst4
+
+      if (sprez < MainChart(wydatek, ChoiseAHU) && wydatek < VolumeMax(ChoiseAHU) && wydatek > VolumeMin(ChoiseAHU ) )
+      {
+          Kom4 = 'Punkt pracy w zakresie centrali ' + Opis;
+          Dyst4 = '<br />';
+
+     
+      }
+      else
+      {
+          Kom4 = '';
+          Dyst4 = '';
+      }
+
+
+
+     
+
+
+      if (ChoiseAHU == 1 || ChoiseAHU == 2 || ChoiseAHU == 3 || ChoiseAHU == 4 || ChoiseAHU == 5 || ChoiseAHU == 11|| ChoiseAHU == 12 || ChoiseAHU == 13 || ChoiseAHU == 14 || ChoiseAHU == 15 || ChoiseAHU == 21 || ChoiseAHU == 22 || ChoiseAHU == 23 || ChoiseAHU == 24 || ChoiseAHU == 31 || ChoiseAHU == 32 || ChoiseAHU == 33 || ChoiseAHU == 34 || ChoiseAHU == 41 || ChoiseAHU == 42 || ChoiseAHU == 43 || ChoiseAHU == 44 || ChoiseAHU == 51 || ChoiseAHU == 52 || ChoiseAHU == 53 || ChoiseAHU == 54 || ChoiseAHU == 121 || ChoiseAHU == 122 || ChoiseAHU == 123 || ChoiseAHU == 124 || ChoiseAHU == 244)
+      {
+
+           $.jqplot('chart1', [powPoints1, powPoints2],
+              {
+
+                  title: '<br />' + Opis + Dyst2 + Kom2 + Dyst3 + Kom3 + Dyst4 + Kom4,
+                  axes: {
+                      xaxis: {
+                          label: 'Wydatek [ m3/h]',
+                          labelRenderer: $.jqplot.CanvasAxisLabelRenderer
+                      },
+                      yaxis: {
+                          label: 'Spręż dyspozycyjny [Pa]',
+                          labelRenderer: $.jqplot.CanvasAxisLabelRenderer
+                      }
+                  }
+
+              })
+
+      }
+
+      else
+      {
+          window.alert('UWAGA :  Brak wybranej centrali w ofercie');
+          document.write('<br />' + 'UWAGA : Brak wybranej centrali w ofercie');
+          
+      }
+
+      // probe change 
+ 
+ 
+
+</script>
+
+
+
+
+
+  

@@ -1,20 +1,21 @@
 ﻿
 
+
 @model WebApplication19.Models.Parameters
 
 @{
-    ViewBag.Title ="TypChoiseAmberRoof";
+    ViewBag.Title ="TypChoiseAmberRoofManual";
 }
 
 
 
 
-@using (Html.BeginForm("TypChoiseAmberRoof", "Home", FormMethod.Post))
+@using (Html.BeginForm("TypChoiseAmberRoofManual", "Manual", FormMethod.Post))
 {
 
      @Html.ValidationSummary()
 
-     <div class="distance">
+     <div class="distance1">
 
         <h4> Typ wymiennika:  </h4>
 
@@ -39,9 +40,34 @@
          
     </div>
 
-   
+    <div class="distance1">
+         <h4>Wybierz wielkość centrali   : </h4>
+ 
+           @Html.DropDownListFor(m => m.WydNom,
+         new SelectList(
 
-   <div class="distance" >  
+                     new List<Object> {
+                     
+                       new  { value = 4 , text = "1200 "},
+
+
+
+
+                  },
+                "value",
+                "text",
+                1
+         ),
+           "Wybierz",
+                  new { @class = "form-control" }
+    
+      )
+ 
+
+        </div>
+
+
+   <div class="distance1" >  
       <h4> Wybierz sposób montażu : </h4>
        
            @Html.DropDownListFor(m => m.Montaz,
@@ -65,7 +91,7 @@
 
 
 
-    <div class="distance">
+    <div class="distance1">
         
 
             <h4> Podaj zakładany wydatek centrali [m3/h] :</h4>
@@ -77,7 +103,7 @@
     </div>
 
 
-    <div class="distance">
+    <div class="distance1">
 
              <h4> Podaj opór instalacji [Pa] :</h4>
 
@@ -108,5 +134,7 @@
 
 
 }
+
+
 
 

@@ -1,20 +1,18 @@
 ﻿
 
+
+
 @model WebApplication19.Models.Parameters
 
 @{
-    ViewBag.Title ="TypChoiseAmberRoof";
+    ViewBag.Title = "TypChoiseAmer2Manual";
 }
 
-
-
-
-@using (Html.BeginForm("TypChoiseAmberRoof", "Home", FormMethod.Post))
+@using (Html.BeginForm("TypChoiseAmber2Manual", "Manual", FormMethod.Post))
 {
 
      @Html.ValidationSummary()
-
-     <div class="distance">
+     <div class="distance1">
 
         <h4> Typ wymiennika:  </h4>
 
@@ -24,9 +22,10 @@
          new SelectList(
 
                         new List<Object> {
-                              
+                               
+                               new  { value = 20 , text = "przeciwprądowy"},
 
-                               new  { value = 40 , text = "obrotowy"},
+                             
                  },
                  "value",
                  "text",
@@ -39,9 +38,34 @@
          
     </div>
 
-   
+    <div class="distance1">
+         <h4>Wybierz wielkość centrali   : </h4>
+ 
+           @Html.DropDownListFor(m => m.WydNom,
+         new SelectList(
 
-   <div class="distance" >  
+                     new List<Object> {
+                       new  { value = 1, text = "300 " },
+                       new  { value = 2 , text = "500 "},
+                       new  { value = 3 , text = "800 "},
+                       new  { value = 4 , text = "1200 "},
+
+
+
+
+                  },
+                "value",
+                "text",
+                1
+         ),
+           "Wybierz",
+                  new { @class = "form-control" }
+    
+      )
+ 
+        </div>
+
+   <div class="distance1" >  
       <h4> Wybierz sposób montażu : </h4>
        
            @Html.DropDownListFor(m => m.Montaz,
@@ -49,7 +73,7 @@
 
                    new List<Object> {
                        new  { value = 0, text = "Stojący" },
-                    
+                   
 
                 },
               "value",
@@ -65,7 +89,7 @@
 
 
 
-    <div class="distance">
+    <div class="distance1">
         
 
             <h4> Podaj zakładany wydatek centrali [m3/h] :</h4>
@@ -77,7 +101,7 @@
     </div>
 
 
-    <div class="distance">
+    <div class="distance1">
 
              <h4> Podaj opór instalacji [Pa] :</h4>
 
@@ -85,8 +109,6 @@
         new { @class = "form-control" }) 
                  
                  
-        
-        
     </div>
 
 
@@ -105,6 +127,12 @@
 
     
     </P>
+
+
+
+
+
+
 
 
 }

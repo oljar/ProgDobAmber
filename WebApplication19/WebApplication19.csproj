@@ -143,6 +143,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManualController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -277,6 +278,11 @@
     <Content Include="Views\Home\TypChoiseAmber2.cshtml" />
     <Content Include="Views\Home\TypChoiseAmberRoof.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Manual\ProductChoiseManual.cshtml" />
+    <Content Include="Views\Manual\TypChoiseAmber1Manual.cshtml" />
+    <Content Include="Views\Manual\TypChoiseAmber2Manual.cshtml" />
+    <Content Include="Views\Manual\TypChoiseAmberRoofManual.cshtml" />
+    <Content Include="Views\Manual\Wykres.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
