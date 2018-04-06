@@ -163,6 +163,7 @@
     <Content Include="Image\182.jpg" />
     <Content Include="Image\234.jpg" />
     <Content Include="Image\logo.png" />
+    <Content Include="Image\O-1200-DO.bmp" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
