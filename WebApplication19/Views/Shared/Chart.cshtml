@@ -10,8 +10,27 @@
 
 
     var spr= ser.Serialize(ViewBag.Sprez);                       //serializacja danych
-    var wyd = ser.Serialize(ViewBag.Wydatek);     
+    var wyd = ser.Serialize(ViewBag.Wydatek);
     var cen = ser.Serialize(ViewBag.Centrala);
+
+    var max300 = ser.Serialize(ViewBag.VMax300);
+    var max500 = ser.Serialize(ViewBag.VMax500);
+    var max800 = ser.Serialize(ViewBag.VMax800);
+    var max1200 = ser.Serialize(ViewBag.VMax1200);
+
+
+    var min300 = ser.Serialize(ViewBag.VMin300);
+    var min500 = ser.Serialize(ViewBag.VMin500);
+    var min800 = ser.Serialize(ViewBag.VMin800);
+    var min1200 = ser.Serialize(ViewBag.VMin1200);
+    var minK1200 = ser.Serialize(ViewBag.VMinK1200);
+
+
+
+
+  
+
+
 
 
   }
@@ -19,7 +38,7 @@
 
     
          
-  <div id="chart1" style="height:400px;width:600px; "></div>  
+  <div id="chart1" style="height:60vh;width:40vw; "></div>
      
 
 
@@ -527,15 +546,15 @@
 
             var Volume = {                                 // zmiana zakresów pomiarów
 
-         min300: 180,
-         max300: 500,
-         min500: 350,
-         max500: 650,
-         min800: 530,
-         max800: 1050,
-         min1200: 880,
-         minK1200: 800,
-         max1200: 1600,
+         min300: @min300,
+         max300: @max300,
+         min500: @min500,
+         max500: @max500,
+         min800: @min800,
+         max800: @max800,
+         min1200: @min1200,
+         minK1200: @minK1200,
+         max1200: @max1200,
 
 
      }

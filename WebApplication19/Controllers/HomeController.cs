@@ -44,6 +44,9 @@ namespace WebApplication19.Controllers
         {
             int WydNom = 0;
             string attention = "";
+            bool Approve = false;
+
+
 
 
 
@@ -106,8 +109,6 @@ namespace WebApplication19.Controllers
 
 
 
-
-
             if (parameters.Wymiennik == 0 && parameters.Montaz == 10)   // dobór centrali A1 - KP
 
 
@@ -152,17 +153,7 @@ namespace WebApplication19.Controllers
 
 
                 }
-
-
-
             }
-
-
-
-
-
-
-
 
 
 
@@ -215,7 +206,14 @@ namespace WebApplication19.Controllers
 
 
 
+
+
             }
+
+
+
+
+
 
 
 
@@ -226,160 +224,214 @@ namespace WebApplication19.Controllers
 
 
 
-            {
+                    {
 
 
 
-                if ((parameters.X * parameters.CA1PP300(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax300) < 0))
+                        if ((parameters.X * parameters.CA1PP300(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax300) < 0))
+                        {
+                            WydNom = 1; //  model PP300
+
+                        }
+
+                        else if ((parameters.X * parameters.CA1PP500(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax500) < 0))
+                        {
+                            WydNom = 2; //  model PP500
+
+                        }
+
+                        else if ((parameters.X * parameters.CA1PP800(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax800) < 0))
+                        {
+                            WydNom = 3; //  model PP800
+
+                        }
+
+                        else if ((parameters.X * parameters.CA1PP1200(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax1200) < 0))
+
+
+                        {
+                            WydNom = 4; //  model PP1200
+
+                        }
+
+
+
+
+
+                        else
+                        {
+                            attention = " - Dopuszczalne parametry przekroczone";
+
+
+                        }
+
+
+
+                    }
+
+
+
+
+
+
+
+                    if (parameters.Wymiennik == 40 && parameters.Montaz == 0)   // dobór centrali A1 - O
+
+
+
+                    {
+
+
+
+                        if ((parameters.X * parameters.CA1O300(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax300) < 0))
+                        {
+                            WydNom = 1; //  model O300
+
+                        }
+
+                        else if ((parameters.X * parameters.CA1O500(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax500) < 0))
+                        {
+                            WydNom = 2; //  model O500
+
+                        }
+
+                        else if ((parameters.X * parameters.CA1O800(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax800) < 0))
+                        {
+                            WydNom = 3; //  model O800
+
+                        }
+
+                        else if ((parameters.X * parameters.CA1O1200(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax1200) < 0))
+
+
+                        {
+                            WydNom = 4; //  model O1200
+
+                        }
+
+
+
+
+
+                        else
+                        {
+                            attention = " - Dopuszczalne parametry przekroczone";
+
+
+                        }
+
+
+
+                    }
+
+
+
+
+
+
+                    if (parameters.Wymiennik == 40 && parameters.Montaz == 10)   // dobór centrali A1 - OP
+
+
+
+                    {
+
+
+
+                        if ((parameters.X * parameters.CA1OP300(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax300) < 0))
+                        {
+                            WydNom = 1; //  model OP300
+
+                        }
+
+                        else if ((parameters.X * parameters.CA1OP500(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax500) < 0))
+                        {
+                            WydNom = 2; //  model OP500
+
+                        }
+
+                        else if ((parameters.X * parameters.CA1OP800(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax800) < 0))
+                        {
+                            WydNom = 3; //  model OP800
+
+                        }
+
+                        else if ((parameters.X * parameters.CA1OP1200(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax1200) < 0))
+
+
+                        {
+                            WydNom = 4; //  model OP1200
+
+                        }
+
+
+
+
+
+                        else
+                        {
+                            attention = " - Dopuszczalne parametry przekroczone";
+
+
+                        }
+
+
+
+                    }
+
+
+
+
+
+
+
+
+           
+
+
+
+           
+
+                // Sprawdzenie zakresów - czy punkt pracy jest w zakresie wydatków 
+
+                if ((WydNom == 1) && (parameters.Wydatek - parameters.VMin300) > 0)
                 {
-                    WydNom = 1; //  model PP300
+
+                    Approve = true;
+                }
+
+                else if ((WydNom == 2) && (parameters.Wydatek - parameters.VMin500) > 0)
+                {
+                    Approve = true;
 
                 }
 
-                else if ((parameters.X * parameters.CA1PP500(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax500) < 0))
+                else if ((WydNom == 3) && (parameters.Wydatek - parameters.VMin800) > 0)
                 {
-                    WydNom = 2; //  model PP500
+                    Approve = true;
 
                 }
 
-                else if ((parameters.X * parameters.CA1PP800(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax800) < 0))
+
+                else if ((WydNom == 4) && (parameters.Wydatek - parameters.VMin1200) > 0)
                 {
-                    WydNom = 3; //  model PP800
-
-                }
-
-                else if ((parameters.X * parameters.CA1PP1200(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax1200) < 0))
-
-
-                {
-                    WydNom = 4; //  model PP1200
-
+                Approve = true;
                 }
 
 
 
 
+                else if ((WydNom == 5) && (parameters.Wydatek - parameters.VMinK1200) > 0)
+
+                {
+                    Approve = true;
+
+                }
 
                 else
                 {
-                    attention = " - Dopuszczalne parametry przekroczone";
-
-
-                }
-
-
-
-            }
-
-
-
-
-
-
-
-            if (parameters.Wymiennik == 40 && parameters.Montaz == 0)   // dobór centrali A1 - O
-
-
-
-            {
-
-
-
-                if ((parameters.X * parameters.CA1O300(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax300) < 0))
-                {
-                    WydNom = 1; //  model O300
+                    Approve = false;
 
                 }
-
-                else if ((parameters.X * parameters.CA1O500(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax500) < 0))
-                {
-                    WydNom = 2; //  model O500
-
-                }
-
-                else if ((parameters.X * parameters.CA1O800(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax800) < 0))
-                {
-                    WydNom = 3; //  model O800
-
-                }
-
-                else if ((parameters.X * parameters.CA1O1200(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax1200) < 0))
-
-
-                {
-                    WydNom = 4; //  model O1200
-
-                }
-
-
-
-
-
-                else
-                {
-                    attention = " - Dopuszczalne parametry przekroczone";
-
-
-                }
-
-
-
-            }
-
-
-
-
-
-
-            if (parameters.Wymiennik == 40 && parameters.Montaz == 10)   // dobór centrali A1 - OP
-
-
-
-            {
-
-
-
-                if ((parameters.X * parameters.CA1OP300(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax300) < 0))
-                {
-                    WydNom = 1; //  model OP300
-
-                }
-
-                else if ((parameters.X * parameters.CA1OP500(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax500) < 0))
-                {
-                    WydNom = 2; //  model OP500
-
-                }
-
-                else if ((parameters.X * parameters.CA1OP800(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax800) < 0))
-                {
-                    WydNom = 3; //  model OP800
-
-                }
-
-                else if ((parameters.X * parameters.CA1OP1200(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax1200) < 0))
-
-
-                {
-                    WydNom = 4; //  model OP1200
-
-                }
-
-
-
-
-
-                else
-                {
-                    attention = " - Dopuszczalne parametry przekroczone";
-
-
-                }
-
-
-
-            }
-
 
 
 
@@ -388,49 +440,63 @@ namespace WebApplication19.Controllers
 
             int n = 0 + parameters.Wymiennik + parameters.Montaz + WydNom;    //  n odpowiada za wybór  centrali
 
-            int a = parameters.Sprez;
+                    int a = parameters.Sprez;
 
-            int b = parameters.Wydatek;
-
-
-
-
-
-            if (parameters.Sprez > parameters.MaxSprez)
-            {
-                n = 0;
-                attention = " - Spręż dyspozycyjny przekroczono ";
-
-            }
-
-
-            ViewBag.Sprez = a;
-            ViewBag.Wydatek = b;
-            ViewBag.Centrala = n;
+                    int b = parameters.Wydatek;
 
 
 
 
 
+                    if (parameters.Sprez > parameters.MaxSprez)
+                    {
+                       
+                        attention = " - Spręż dyspozycyjny przekroczono ";
+                        Approve = false;
+                    }
 
 
-            if (ModelState.IsValid)
-            {
-                ViewBag.Message = "Dobór Automatyczny - Amber 1" + attention;
-                return View("Wykres", parameters);
-            }
-            else
+                    ViewBag.Sprez = a;
+                    ViewBag.Wydatek = b;
+                    ViewBag.Centrala = n;
+                    ViewBag.Approve = Approve;
 
-            {
-                ViewBag.Message = "Dobór Automatyczny - Amber 1 - Popraw dane";
-                return View();
-            }
+
+
+                    ViewBag.VMax300 = parameters.VMax300;
+                    ViewBag.VMax500 = parameters.VMax500;
+                    ViewBag.VMax800 = parameters.VMax800;
+                    ViewBag.VMax1200 = parameters.VMax1200;
+
+
+                    ViewBag.VMin300 = parameters.VMin300;
+                    ViewBag.VMin500 = parameters.VMin500;
+                    ViewBag.VMin800 = parameters.VMin800;
+                    ViewBag.VMin1200 = parameters.VMin1200;
+                    ViewBag.VMinK1200 = parameters.VMinK1200;
+
+
+
+
+
+                    if (ModelState.IsValid)
+                    {
+                        ViewBag.Message = "Dobór Automatyczny - Amber 1" + attention;
+                        return View("Selection");
+                    }
+                    else
+
+                    {
+                        ViewBag.Message = "Dobór Automatyczny - Amber 1 - Popraw dane";
+                        return View();
+                    }
 
 
 
 
         }
-
+            
+    
 
 
 
@@ -452,7 +518,7 @@ namespace WebApplication19.Controllers
         {
             int WydNom = 0;
             string attention = "";
-
+            bool Approve = false;
 
 
 
@@ -511,6 +577,53 @@ namespace WebApplication19.Controllers
 
 
 
+
+
+            // Sprawdzenie zakresów - czy punkt pracy jest w zakresie wydatków 
+
+            if ((WydNom == 1) && (parameters.Wydatek - parameters.VMin300) > 0)
+            {
+
+                Approve = true;
+            }
+
+            else if ((WydNom == 2) && (parameters.Wydatek - parameters.VMin500) > 0)
+            {
+                Approve = true;
+
+            }
+
+            else if ((WydNom == 3) && (parameters.Wydatek - parameters.VMin800) > 0)
+            {
+                Approve = true;
+
+            }
+
+
+            else if ((WydNom == 4) && (parameters.Wydatek - parameters.VMin1200) > 0)
+            {
+                Approve = true;
+            }
+
+
+
+            else
+            {
+                Approve = false;
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+
             int n = 100 + parameters.Wymiennik + parameters.Montaz + WydNom;    //  n odpowiada za wybór  centrali
 
 
@@ -524,8 +637,9 @@ namespace WebApplication19.Controllers
 
             if (parameters.Sprez > parameters.MaxSprez)
             {
-                n = 0;
+                
                 attention = " - Spręż dyspozycyjny przekroczono";
+                Approve = false;
 
             }
 
@@ -534,10 +648,21 @@ namespace WebApplication19.Controllers
             ViewBag.Sprez = a;
             ViewBag.Wydatek = b;
             ViewBag.Centrala = n;
+            ViewBag.Approve = Approve;
 
 
 
+            ViewBag.VMax300 = parameters.VMax300;
+            ViewBag.VMax500 = parameters.VMax500;
+            ViewBag.VMax800 = parameters.VMax800;
+            ViewBag.VMax1200 = parameters.VMax1200;
 
+
+            ViewBag.VMin300 = parameters.VMin300;
+            ViewBag.VMin500 = parameters.VMin500;
+            ViewBag.VMin800 = parameters.VMin800;
+            ViewBag.VMin1200 = parameters.VMin1200;
+            ViewBag.VMinK1200 = parameters.VMinK1200;
 
 
 
@@ -547,7 +672,7 @@ namespace WebApplication19.Controllers
             if (ModelState.IsValid)
             {
                 ViewBag.Message = "Dobór Automatyczny - Amber 2" + attention;
-                return View("Wykres", parameters);
+                return View("Selection");
             }
             else
 
@@ -582,7 +707,7 @@ namespace WebApplication19.Controllers
         {
             int WydNom = 0;
             string attention = "";
-
+            bool Approve = false;
 
 
 
@@ -620,7 +745,22 @@ namespace WebApplication19.Controllers
             }
 
 
+            // Sprawdzenie zakresów - czy punkt pracy jest w zakresie wydatków 
 
+
+            if ((WydNom == 4) && (parameters.Wydatek - parameters.VMin1200) > 0)
+            {
+                Approve = true;
+            }
+
+
+            else
+            {
+                Approve = false;
+
+            }
+
+             
 
 
             int n = 200 + parameters.Wymiennik + parameters.Montaz + WydNom;    //  n odpowiada za wybór  centrali
@@ -636,8 +776,9 @@ namespace WebApplication19.Controllers
 
             if (parameters.Sprez > parameters.MaxSprez)
             {
-                n = 0;
+               
                 attention = " - Spręż dyspozycyjny przekroczono";
+                Approve = false;
 
             }
 
@@ -647,9 +788,20 @@ namespace WebApplication19.Controllers
             ViewBag.Sprez = a;
             ViewBag.Wydatek = b;
             ViewBag.Centrala = n;
+            ViewBag.Approve = Approve;
 
 
+            ViewBag.VMax300 = parameters.VMax300;
+            ViewBag.VMax500 = parameters.VMax500;
+            ViewBag.VMax800 = parameters.VMax800;
+            ViewBag.VMax1200 = parameters.VMax1200;
 
+
+            ViewBag.VMin300 = parameters.VMin300;
+            ViewBag.VMin500 = parameters.VMin500;
+            ViewBag.VMin800 = parameters.VMin800;
+            ViewBag.VMin1200 = parameters.VMin1200;
+            ViewBag.VMinK1200 = parameters.VMinK1200;
 
 
 
@@ -660,7 +812,7 @@ namespace WebApplication19.Controllers
             if (ModelState.IsValid)
             {
                 ViewBag.Message = "Dobór Automatyczny - Amber 1 - Wer. Dachowa" + attention;
-                return View("Wykres", parameters);
+                return View("Selection");
             }
             else
 
@@ -677,10 +829,6 @@ namespace WebApplication19.Controllers
 
 
 
-        public ActionResult Index()
-        {
-            return View();
-        }
 
         public ActionResult Kontakt()
 
@@ -690,45 +838,9 @@ namespace WebApplication19.Controllers
             return View();
         }
 
-        public ActionResult Wykres()
+      
 
-        {
-            
-
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult Index(Parameters parameters)
-
-
-        {
-
-
-           
-
-            int n = (int)parameters.Typoszereg + parameters.Wymiennik + parameters.Montaz + parameters.WydNom;    //  n odpowiada za wybór  centrali
-
-
-
-            if (n == 4 || n == 14)                                                                          //  zmiana dla modeli 800
-            {
-                n = n + 1;
-            }
-
-
-            int a = parameters.Sprez;
-
-            int b = parameters.Wydatek;
-
-            
-
-            ViewBag.Sprez = a;
-            ViewBag.Wydatek = b;
-            ViewBag.Centrala = n;
-
-            return View("Wykres",parameters);
-        }
+      
 
     }
 

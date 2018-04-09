@@ -28,7 +28,8 @@ namespace WebApplication19
                       "~/Content/site.css",
                       "~/Content/Menu.css",
                       "~/Content/Button.css",
-                      "~/Content/Stripe.css"));
+                      "~/Content/Stripe.css",
+                      "~/Content/ChoiseStyle.css"));
         }
     }
 }

@@ -81,7 +81,17 @@ namespace WebApplication19.Controllers
             ViewBag.Centrala = n;
 
 
+            ViewBag.VMax300 = parameters.VMax300;
+            ViewBag.VMax500 = parameters.VMax500;
+            ViewBag.VMax800 = parameters.VMax800;
+            ViewBag.VMax800 = parameters.VMax800;
 
+
+            ViewBag.VMin300 = parameters.VMin300;
+            ViewBag.VMin500 = parameters.VMin500;
+            ViewBag.VMin800 = parameters.VMin800;
+            ViewBag.VMin800 = parameters.VMin800;
+            ViewBag.VMinK1200 = parameters.VMinK1200;
 
 
 
@@ -89,7 +99,7 @@ namespace WebApplication19.Controllers
             if (ModelState.IsValid)
             {
                 ViewBag.Message = "Dobór Ręczny - Amber 1" + attention;
-                return View("Wykres", parameters);
+                return View("Selection");
             }
             else
 
@@ -158,7 +168,17 @@ namespace WebApplication19.Controllers
 
 
 
+            ViewBag.VMax300 = parameters.VMax300;
+            ViewBag.VMax500 = parameters.VMax500;
+            ViewBag.VMax800 = parameters.VMax800;
+            ViewBag.VMax800 = parameters.VMax800;
 
+
+            ViewBag.VMin300 = parameters.VMin300;
+            ViewBag.VMin500 = parameters.VMin500;
+            ViewBag.VMin800 = parameters.VMin800;
+            ViewBag.VMin800 = parameters.VMin800;
+            ViewBag.VMinK1200 = parameters.VMinK1200;
 
 
 
@@ -168,7 +188,7 @@ namespace WebApplication19.Controllers
             if (ModelState.IsValid)
             {
                 ViewBag.Message = "Dobór Ręczny - Amber 2" + attention;
-                return View("Wykres", parameters);
+                return View("Selection");
             }
             else
 
@@ -232,7 +252,17 @@ namespace WebApplication19.Controllers
             ViewBag.Centrala = n;
 
 
+            ViewBag.VMax300 = parameters.VMax300;
+            ViewBag.VMax500 = parameters.VMax500;
+            ViewBag.VMax800 = parameters.VMax800;
+            ViewBag.VMax800 = parameters.VMax800;
 
+
+            ViewBag.VMin300 = parameters.VMin300;
+            ViewBag.VMin500 = parameters.VMin500;
+            ViewBag.VMin800 = parameters.VMin800;
+            ViewBag.VMin800 = parameters.VMin800;
+            ViewBag.VMinK1200 = parameters.VMinK1200;
 
 
 
@@ -243,7 +273,7 @@ namespace WebApplication19.Controllers
             if (ModelState.IsValid)
             {
                 ViewBag.Message = "Dobór Ręczny- Amber 1 - Wer. Dachowa" + attention;
-                return View("Wykres", parameters);
+                return View("Selection");
             }
             else
 

@@ -1,0 +1,27 @@
+﻿
+.left {
+  float: left;
+
+
+ 
+}
+.right {
+  float: right;
+
+}
+
+#win2 {
+   width:40vw;
+   height:75vh;
+   float: right;
+   border:groove;
+   margin-top:10px
+
+}
+
+
+#win1 {
+    width: 40vw;
+    height: 75vh;
+    float: left;
+}

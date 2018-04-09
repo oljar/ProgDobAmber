@@ -27,6 +27,8 @@ namespace WebApplication19.Models
         [Required(ErrorMessage = "Proszę podać wartość liczbową w [m3/h] ")]
         public int WydNom { get; set; }
 
+        public bool Approve { get; set; }
+
         public int Montaz { get; set; }
 
         public double X = 1;  // współczynnik bezpieczeństwa
@@ -37,6 +39,16 @@ namespace WebApplication19.Models
         public int VMax500 = 650;  // Dop wydatek dla 500
         public int VMax800 = 1050;  // Dop wydatek dla 800
         public int VMax1200 = 1600;  // Dop wydatek dla 1200
+
+
+        public int VMin300 = 180;  //Min wydatek dla 300
+        public int VMin500 = 350;   //Min wydatek dla 500
+        public int VMin800 = 530;   //Min wydatek dla 800
+        public int VMin1200 = 880;  //Min wydatek dla 1200
+        public int VMinK1200 = 800;  //Min wydatek dla K1200
+
+
+
 
 
 
