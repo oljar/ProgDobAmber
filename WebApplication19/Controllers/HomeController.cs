@@ -450,7 +450,7 @@ namespace WebApplication19.Controllers
 
                     if (parameters.Sprez > parameters.MaxSprez)
                     {
-                       
+                        n = 0;
                         attention = " - Spręż dyspozycyjny przekroczono ";
                         Approve = false;
                     }
@@ -637,7 +637,7 @@ namespace WebApplication19.Controllers
 
             if (parameters.Sprez > parameters.MaxSprez)
             {
-                
+                n = 0;
                 attention = " - Spręż dyspozycyjny przekroczono";
                 Approve = false;
 
@@ -776,7 +776,7 @@ namespace WebApplication19.Controllers
 
             if (parameters.Sprez > parameters.MaxSprez)
             {
-               
+                n = 0;
                 attention = " - Spręż dyspozycyjny przekroczono";
                 Approve = false;
 
