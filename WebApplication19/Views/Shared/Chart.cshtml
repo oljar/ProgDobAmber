@@ -26,9 +26,12 @@
     var minK1200 = ser.Serialize(ViewBag.VMinK1200);
 
 
+    var Z = ser.Serialize(ViewBag.Z);
 
 
-  
+
+
+      
 
 
 
@@ -411,24 +414,24 @@
                 else if (ChoiseAHU == 31)                                // zmiana  wykresów  Amber PP
 
                 {
-                    return ChartKP300(i);
+                    return ChartPP300(i);
 
                 }
 
                 else if (ChoiseAHU == 32)
                 {
-                    return ChartKP500(i);
+                    return ChartPP500(i);
                 }
 
                 else if (ChoiseAHU == 33)
                 {
-                    return ChartKP800(i);
+                    return ChartPP800(i);
 
                 }
 
                 else if (ChoiseAHU == 34)
                 {
-                    return ChartKP1200(i);
+                    return ChartPP1200(i);
                 }
 
 
@@ -634,7 +637,12 @@
 
 
             var sprez =@spr;
-            var wydatek=@wyd;
+            var wydatek =@wyd;
+
+            var Z=@Z; // Współcznnik obniżający wydatek min
+
+            
+
 
 
             var powPoints1 = []; 
@@ -796,9 +804,10 @@
      var Kom4
      var Dyst4
 
-     if (sprez < MainChart(wydatek, ChoiseAHU) && (VolumeMax(ChoiseAHU)> wydatek) && (VolumeMin(ChoiseAHU) < wydatek))
+     if (sprez < MainChart(wydatek, ChoiseAHU) && (VolumeMax(ChoiseAHU)> wydatek) && (Z*VolumeMin(ChoiseAHU) < wydatek))
       {
-          Kom4 = 'Punkt pracy w zakresie centrali ' + Opis;
+         Kom4 = 'Punkt pracy w zakresie centrali ' + Opis;
+       
           Dyst4 = '<br />';
 
      

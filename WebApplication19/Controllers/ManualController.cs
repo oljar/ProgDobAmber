@@ -21,7 +21,7 @@ namespace WebApplication19.Controllers
         }
 
 
-         public ActionResult TypChoiseAmber1Manual()
+        public ActionResult TypChoiseAmber1Manual()
         {
             ViewBag.Message = "Dobór Ręczny - Amber 1 ";
             return View();
@@ -36,8 +36,265 @@ namespace WebApplication19.Controllers
 
 
         {
-           
-            string attention="";
+
+            string attention = "";
+
+            bool Approve = false;
+
+
+            int Size = parameters.WydNom;
+
+         
+
+
+            if (parameters.Wymiennik == 0 && parameters.Montaz == 0)   // dobór centrali A1 - K
+            {
+
+
+                if ((Size == 1) && (parameters.X * parameters.CA1K300(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.Z * parameters.VMin300) > 0) && (parameters.Wydatek - parameters.VMax300) < 0)
+                {
+
+                    Approve = true;
+                }
+
+
+                else if ((Size == 2) && (parameters.X * parameters.CA1K500(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.Z * parameters.VMin500) > 0) && (parameters.Wydatek - parameters.VMax500) < 0)
+                {
+
+                    Approve = true;
+                }
+
+
+                else if ((Size == 3) && (parameters.X * parameters.CA1K800(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.Z * parameters.VMin800) > 0) && (parameters.Wydatek - parameters.VMax800) < 0)
+                {
+
+                    Approve = true;
+                }
+
+                else if ((Size == 4) && (parameters.X * parameters.CA1K1200(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.Z * parameters.VMinK1200) > 0) && (parameters.Wydatek - parameters.VMax1200) < 0)
+                {
+
+                    Approve = true;
+                }
+
+
+
+                else
+                {
+                    Approve = false;
+                }
+            }
+
+      
+
+
+            if (parameters.Wymiennik == 0 && parameters.Montaz == 10)   // dobór centrali A1 - KP
+            {
+
+
+                if ((Size == 1) && (parameters.X * parameters.CA1KP300(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.Z * parameters.VMin300) > 0) && (parameters.Wydatek - parameters.VMax300) < 0)
+                {
+
+                    Approve = true;
+                }
+
+
+                else if ((Size == 2) && (parameters.X * parameters.CA1KP500(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.Z * parameters.VMin500) > 0) && (parameters.Wydatek - parameters.VMax500) < 0)
+                {
+
+                    Approve = true;
+                }
+
+
+                else if ((Size == 3) && (parameters.X * parameters.CA1KP800(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.Z * parameters.VMin800) > 0) && (parameters.Wydatek - parameters.VMax800) < 0)
+                {
+
+                    Approve = true;
+                }
+
+                else if ((Size == 4) && (parameters.X * parameters.CA1KP1200(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.Z * parameters.VMinK1200) > 0) && (parameters.Wydatek - parameters.VMax1200) < 0)
+                {
+
+                    Approve = true;
+                }
+
+
+
+                else
+                {
+                    Approve = false;
+                }
+            }
+
+
+
+
+            if (parameters.Wymiennik == 20 && parameters.Montaz == 0)   // dobór centrali A1 - P
+            {
+
+
+                if ((Size == 1) && (parameters.X * parameters.CA1P300(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.Z * parameters.VMin300) > 0) && (parameters.Wydatek - parameters.VMax300) < 0)
+                {
+
+                    Approve = true;
+                }
+
+
+                else if ((Size == 2) && (parameters.X * parameters.CA1P500(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.Z * parameters.VMin500) > 0) && (parameters.Wydatek - parameters.VMax500) < 0)
+                {
+
+                    Approve = true;
+                }
+
+
+                else if ((Size == 3) && (parameters.X * parameters.CA1P800(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.Z * parameters.VMin800) > 0) && (parameters.Wydatek - parameters.VMax800) < 0)
+                {
+
+                    Approve = true;
+                }
+
+                else if ((Size == 4) && (parameters.X * parameters.CA1P1200(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.Z * parameters.VMin1200) > 0) && (parameters.Wydatek - parameters.VMax1200) < 0)
+                {
+
+                    Approve = true;
+                }
+
+
+
+                else
+                {
+                    Approve = false;
+                }
+            }
+
+
+
+
+
+
+            if (parameters.Wymiennik == 20 && parameters.Montaz == 10)   // dobór centrali A1 - PP
+            {
+
+
+                if ((Size == 1) && (parameters.X * parameters.CA1PP300(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.Z * parameters.VMin300) > 0) && (parameters.Wydatek - parameters.VMax300) < 0)
+                {
+
+                    Approve = true;
+                }
+
+
+                else if ((Size == 2) && (parameters.X * parameters.CA1PP500(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.Z * parameters.VMin500) > 0) && (parameters.Wydatek - parameters.VMax500) < 0)
+                {
+
+                    Approve = true;
+                }
+
+
+                else if ((Size == 3) && (parameters.X * parameters.CA1PP800(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.Z * parameters.VMin800) > 0) && (parameters.Wydatek - parameters.VMax800) < 0)
+                {
+
+                    Approve = true;
+                }
+
+                else if ((Size == 4) && (parameters.X * parameters.CA1PP1200(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.Z * parameters.VMin1200) > 0) && (parameters.Wydatek - parameters.VMax1200) < 0)
+                {
+
+                    Approve = true;
+                }
+
+
+
+                else
+                {
+                    Approve = false;
+                }
+            }
+
+
+            double ccc = (parameters.X * parameters.CA1PP1200(parameters.Wydatek));
+
+
+
+
+            if (parameters.Wymiennik == 40 && parameters.Montaz == 0)   // dobór centrali A1 - O
+            {
+
+
+                if ((Size == 1) && (parameters.X * parameters.CA1O300(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.Z * parameters.VMin300) > 0) && (parameters.Wydatek - parameters.VMax300) < 0)
+                {
+
+                    Approve = true;
+                }
+
+
+                else if ((Size == 2) && (parameters.X * parameters.CA1O500(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.Z * parameters.VMin500) > 0) && (parameters.Wydatek - parameters.VMax500) < 0)
+                {
+
+                    Approve = true;
+                }
+
+
+                else if ((Size == 3) && (parameters.X * parameters.CA1O800(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.Z * parameters.VMin800) > 0) && (parameters.Wydatek - parameters.VMax800) < 0)
+                {
+
+                    Approve = true;
+                }
+
+                else if ((Size == 4) && (parameters.X * parameters.CA1O1200(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.Z * parameters.VMin1200) > 0) && (parameters.Wydatek - parameters.VMax1200) < 0)
+                {
+
+                    Approve = true;
+                }
+
+
+
+                else
+                {
+                    Approve = false;
+                }
+            }
+
+
+
+
+
+            if (parameters.Wymiennik == 40 && parameters.Montaz == 10)   // dobór centrali A1 - OP
+            {
+
+
+                if ((Size == 1) && (parameters.X * parameters.CA1OP300(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.Z * parameters.VMin300) > 0) && (parameters.Wydatek - parameters.VMax300) < 0)
+                {
+
+                    Approve = true;
+                }
+
+
+                else if ((Size == 2) && (parameters.X * parameters.CA1OP500(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.Z * parameters.VMin500) > 0) && (parameters.Wydatek - parameters.VMax500) < 0)
+                {
+
+                    Approve = true;
+                }
+
+
+                else if ((Size == 3) && (parameters.X * parameters.CA1OP800(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.Z * parameters.VMin800) > 0) && (parameters.Wydatek - parameters.VMax800) < 0)
+                {
+
+                    Approve = true;
+                }
+
+                else if ((Size == 4) && (parameters.X * parameters.CA1OP1200(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.Z * parameters.VMin1200) > 0) && (parameters.Wydatek - parameters.VMax1200) < 0)
+                {
+
+                    Approve = true;
+                }
+
+
+
+                else
+                {
+                    Approve = false;
+                }
+            }
 
 
 
@@ -45,86 +302,96 @@ namespace WebApplication19.Controllers
 
 
 
-
-
-
-
-            int Size = parameters.WydNom;  // Wilekość centrali
 
 
 
             int n = 0 + parameters.Wymiennik + parameters.Montaz + Size;    //  n odpowiada za wybór  centrali
 
-            if (n == 4 || n == 14)                                                 //  zmiana dla modeli K-1200
-            {
-                n = n + 1;
-            }
+                if (n == 4 || n == 14)                                                 //  zmiana dla modeli K-1200
+                {
+                    n = n + 1;
+                }
 
-            int a = parameters.Sprez;
+                int a = parameters.Sprez;
 
-            int b = parameters.Wydatek;
-
-
+                int b = parameters.Wydatek;
 
 
 
-            if (parameters.Sprez > parameters.MaxSprez)
-            {
-                n = 0;
-                attention = " - Spręż dyspozycyjny przekroczono ";
-
-            }
 
 
-            ViewBag.Sprez = a;
-            ViewBag.Wydatek = b;
-            ViewBag.Centrala = n;
 
 
-            ViewBag.VMax300 = parameters.VMax300;
-            ViewBag.VMax500 = parameters.VMax500;
-            ViewBag.VMax800 = parameters.VMax800;
-            ViewBag.VMax800 = parameters.VMax800;
+
+                if (parameters.Sprez > parameters.MaxSprez)
+                {
+                    n = 0;
+                    attention = " - Spręż dyspozycyjny przekroczono ";
+                    Approve = false;
+                }
 
 
-            ViewBag.VMin300 = parameters.VMin300;
-            ViewBag.VMin500 = parameters.VMin500;
-            ViewBag.VMin800 = parameters.VMin800;
-            ViewBag.VMin800 = parameters.VMin800;
-            ViewBag.VMinK1200 = parameters.VMinK1200;
+
+
+                ViewBag.Sprez = a;
+                ViewBag.Wydatek = b;
+                ViewBag.Centrala = n;
+                ViewBag.Approve = Approve;
+                ViewBag.Z = parameters.Z;
+
+
+                ViewBag.VMax300 = parameters.VMax300;
+                ViewBag.VMax500 = parameters.VMax500;
+                ViewBag.VMax800 = parameters.VMax800;
+                ViewBag.VMax1200 = parameters.VMax1200;
+
+
+                ViewBag.VMin300 = parameters.VMin300;
+                ViewBag.VMin500 = parameters.VMin500;
+                ViewBag.VMin800 = parameters.VMin800;
+                ViewBag.VMin1200 = parameters.VMin1200;
+                ViewBag.VMinK1200 = parameters.VMinK1200;
+
+             
+            
+
 
 
 
 
             if (ModelState.IsValid)
             {
-                ViewBag.Message = "Dobór Ręczny - Amber 1" + attention;
-                return View("Selection");
+                 ViewBag.Message = "Dobór Ręczny - Amber 1" + attention;
+                 return View("Selection");
             }
             else
 
             {
-                ViewBag.Message = "Dobór Ręczny - Amber 1 - Popraw dane";
-                return View();
+                 ViewBag.Message = "Dobór Ręczny - Amber 1 - Popraw dane";
+                 return View();
             }
 
 
 
+            
 
         }
 
 
 
 
+
+
+        
 
 
         public ActionResult TypChoiseAmber2Manual()
-        {
-            ViewBag.Message = "Dobór Ręczny - Amber 2 ";
-            return View();
-        }
+            {
+                ViewBag.Message = "Dobór Ręczny - Amber 2 ";
+                return View();
+            }
 
-
+        
 
 
         [HttpPost]
@@ -132,11 +399,54 @@ namespace WebApplication19.Controllers
 
 
         {
-            
-            string attention = "";
 
+            string attention = "";
+            bool Approve = false;
+
+          
 
             int Size = parameters.WydNom;  // Wilekość centrali
+
+            
+
+
+            if (parameters.Wymiennik == 20 && parameters.Montaz == 0)   // dobór centrali A1 - OP
+            {
+
+
+                if ((Size == 1) && (parameters.X * parameters.CA2P300(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.Z * parameters.VMin300) > 0) && (parameters.Wydatek - parameters.VMax300) < 0)
+                {
+
+                    Approve = true;
+                }
+
+
+                else if ((Size == 2) && (parameters.X * parameters.CA2P500(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.Z * parameters.VMin500) > 0) && (parameters.Wydatek - parameters.VMax500) < 0)
+                {
+
+                    Approve = true;
+                }
+
+
+                else if ((Size == 3) && (parameters.X * parameters.CA2P800(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.Z * parameters.VMin800) > 0) && (parameters.Wydatek - parameters.VMax800) < 0)
+                {
+
+                    Approve = true;
+                }
+
+                else if ((Size == 4) && (parameters.X * parameters.CA2P1200(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.Z * parameters.VMin1200) > 0) && (parameters.Wydatek - parameters.VMax1200) < 0)
+                {
+
+                    Approve = true;
+                }
+
+
+
+                else
+                {
+                    Approve = false;
+                }
+            }
 
 
 
@@ -165,19 +475,21 @@ namespace WebApplication19.Controllers
             ViewBag.Sprez = a;
             ViewBag.Wydatek = b;
             ViewBag.Centrala = n;
+            ViewBag.Approve = Approve;
+            ViewBag.Z = parameters.Z;
 
 
 
             ViewBag.VMax300 = parameters.VMax300;
             ViewBag.VMax500 = parameters.VMax500;
             ViewBag.VMax800 = parameters.VMax800;
-            ViewBag.VMax800 = parameters.VMax800;
+            ViewBag.VMax1200 = parameters.VMax1200;
 
 
             ViewBag.VMin300 = parameters.VMin300;
             ViewBag.VMin500 = parameters.VMin500;
             ViewBag.VMin800 = parameters.VMin800;
-            ViewBag.VMin800 = parameters.VMin800;
+            ViewBag.VMin1200 = parameters.VMin1200;
             ViewBag.VMinK1200 = parameters.VMinK1200;
 
 
@@ -221,20 +533,36 @@ namespace WebApplication19.Controllers
 
 
         {
-           
+
             string attention = "";
             int Size = parameters.WydNom;
+            bool Approve = false;
+            
+
+
+            if (parameters.Wymiennik == 40 && parameters.Montaz == 0)   // dobór centrali A1 - OP
+            {
+
+
+                if ((Size == 4) && (parameters.X * parameters.CADOP1200(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.Z * parameters.VMin1200) > 0) && (parameters.Wydatek - parameters.VMax1200) < 0)
+                {
+
+                    Approve = true;
+                }
+
+                else
+                {
+                    Approve = false;
+                }
+
+             
+            }
+
+
+
 
 
             int n = 200 + parameters.Wymiennik + parameters.Montaz + Size;    //  n odpowiada za wybór  centrali
-
-
-
-            int a = parameters.Sprez;
-
-            int b = parameters.Wydatek;
-
-
 
 
             if (parameters.Sprez > parameters.MaxSprez)
@@ -245,23 +573,30 @@ namespace WebApplication19.Controllers
             }
 
 
+            int a = parameters.Sprez;
+
+            int b = parameters.Wydatek;
+
 
 
             ViewBag.Sprez = a;
             ViewBag.Wydatek = b;
             ViewBag.Centrala = n;
+            ViewBag.Approve = Approve;
+            ViewBag.Z = parameters.Z;
+
 
 
             ViewBag.VMax300 = parameters.VMax300;
             ViewBag.VMax500 = parameters.VMax500;
             ViewBag.VMax800 = parameters.VMax800;
-            ViewBag.VMax800 = parameters.VMax800;
+            ViewBag.VMax1200 = parameters.VMax1200;
 
 
             ViewBag.VMin300 = parameters.VMin300;
             ViewBag.VMin500 = parameters.VMin500;
             ViewBag.VMin800 = parameters.VMin800;
-            ViewBag.VMin800 = parameters.VMin800;
+            ViewBag.VMin1200 = parameters.VMin1200;
             ViewBag.VMinK1200 = parameters.VMinK1200;
 
 

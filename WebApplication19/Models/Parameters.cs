@@ -33,7 +33,11 @@ namespace WebApplication19.Models
 
         public double X = 1;  // współczynnik bezpieczeństwa
 
-        public int MaxSprez = 440;  // Dop sręż
+        public double Z=0.8; // Współczynnik zmniejszenie minimalnego wydatku - poprawia dobór automatyczny
+
+
+
+        public int MaxSprez = 440;  // Dop spręż
 
         public int VMax300 = 500; // Dop wydatek dla 300
         public int VMax500 = 650;  // Dop wydatek dla 500
@@ -44,7 +48,7 @@ namespace WebApplication19.Models
         public int VMin300 = 180;  //Min wydatek dla 300
         public int VMin500 = 350;   //Min wydatek dla 500
         public int VMin800 = 530;   //Min wydatek dla 800
-        public int VMin1200 = 880;  //Min wydatek dla 1200
+        public int VMin1200 = 900;  //Min wydatek dla 1200
         public int VMinK1200 = 800;  //Min wydatek dla K1200
 
 
@@ -168,7 +172,7 @@ namespace WebApplication19.Models
             return 1000 * (0.5369 * Math.Pow(0.001 * i, 3) - 2.513 * Math.Pow(0.001 * i, 2) + 3.2425 * 0.001 * i - 0.8961);
 
         }
-
+ 
 
         // wykesy A1 O
 

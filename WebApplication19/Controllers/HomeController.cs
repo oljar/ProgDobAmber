@@ -11,11 +11,15 @@ namespace WebApplication19.Controllers
     {
 
 
+        
+
 
         public ActionResult ProductChoise()
 
         {
             ViewBag.Message = "Dobór Automatyczny - Wybór poduktu";
+
+
 
 
 
@@ -393,41 +397,39 @@ namespace WebApplication19.Controllers
 
                 // Sprawdzenie zakresów - czy punkt pracy jest w zakresie wydatków 
 
-                if ((WydNom == 1) && (parameters.Wydatek - parameters.VMin300) > 0)
+                if ((WydNom == 1) && (parameters.Wydatek - parameters.Z * parameters.VMin300) > 0)
                 {
 
                     Approve = true;
                 }
 
-                else if ((WydNom == 2) && (parameters.Wydatek - parameters.VMin500) > 0)
+                else if ((WydNom == 2) && (parameters.Wydatek - parameters.Z * parameters.VMin500) > 0)
                 {
                     Approve = true;
 
                 }
 
-                else if ((WydNom == 3) && (parameters.Wydatek - parameters.VMin800) > 0)
+                else if ((WydNom == 3) && (parameters.Wydatek - parameters.Z * parameters.VMin800) > 0)
                 {
                     Approve = true;
 
                 }
 
 
-                else if ((WydNom == 4) && (parameters.Wydatek - parameters.VMin1200) > 0)
+                else if ((WydNom == 4) && (parameters.Wydatek - parameters.Z * parameters.VMin1200) > 0)
                 {
-                Approve = true;
+                     Approve = true;
                 }
 
 
-
-
-                else if ((WydNom == 5) && (parameters.Wydatek - parameters.VMinK1200) > 0)
-
+                else if ((WydNom == 5) && (parameters.Wydatek - parameters.Z * parameters.VMinK1200) > 0)
                 {
                     Approve = true;
-
                 }
 
-                else
+
+
+            else
                 {
                     Approve = false;
 
@@ -438,7 +440,10 @@ namespace WebApplication19.Controllers
 
 
 
-            int n = 0 + parameters.Wymiennik + parameters.Montaz + WydNom;    //  n odpowiada za wybór  centrali
+                    int n = 0 + parameters.Wymiennik + parameters.Montaz + WydNom;    //  n odpowiada za wybór  centrali
+
+
+                   
 
                     int a = parameters.Sprez;
 
@@ -460,6 +465,8 @@ namespace WebApplication19.Controllers
                     ViewBag.Wydatek = b;
                     ViewBag.Centrala = n;
                     ViewBag.Approve = Approve;
+
+                    ViewBag.Z = parameters.Z;
 
 
 
@@ -581,26 +588,32 @@ namespace WebApplication19.Controllers
 
             // Sprawdzenie zakresów - czy punkt pracy jest w zakresie wydatków 
 
-            if ((WydNom == 1) && (parameters.Wydatek - parameters.VMin300) > 0)
+            if ((WydNom == 1) && (parameters.Wydatek - parameters.Z * parameters.VMin300) > 0)
             {
 
                 Approve = true;
             }
 
-            else if ((WydNom == 2) && (parameters.Wydatek - parameters.VMin500) > 0)
+            else if ((WydNom == 2) && (parameters.Wydatek - parameters.Z * parameters.VMin500) > 0)
             {
                 Approve = true;
 
             }
 
-            else if ((WydNom == 3) && (parameters.Wydatek - parameters.VMin800) > 0)
+            else if ((WydNom == 3) && (parameters.Wydatek - parameters.Z * parameters.VMin800) > 0)
             {
                 Approve = true;
 
             }
 
 
-            else if ((WydNom == 4) && (parameters.Wydatek - parameters.VMin1200) > 0)
+            else if ((WydNom == 4) && (parameters.Wydatek - parameters.Z * parameters.VMin1200) > 0)
+            {
+                Approve = true;
+            }
+
+
+            else if ((WydNom == 5) && (parameters.Wydatek - parameters.Z * parameters.VMinK1200) > 0)
             {
                 Approve = true;
             }
@@ -649,6 +662,8 @@ namespace WebApplication19.Controllers
             ViewBag.Wydatek = b;
             ViewBag.Centrala = n;
             ViewBag.Approve = Approve;
+
+            ViewBag.Z = parameters.Z;
 
 
 
@@ -748,7 +763,7 @@ namespace WebApplication19.Controllers
             // Sprawdzenie zakresów - czy punkt pracy jest w zakresie wydatków 
 
 
-            if ((WydNom == 4) && (parameters.Wydatek - parameters.VMin1200) > 0)
+            if ((WydNom == 4) && (parameters.Wydatek - parameters.Z * parameters.VMin1200) > 0)
             {
                 Approve = true;
             }
@@ -789,6 +804,9 @@ namespace WebApplication19.Controllers
             ViewBag.Wydatek = b;
             ViewBag.Centrala = n;
             ViewBag.Approve = Approve;
+
+            ViewBag.Z = parameters.Z;
+
 
 
             ViewBag.VMax300 = parameters.VMax300;
