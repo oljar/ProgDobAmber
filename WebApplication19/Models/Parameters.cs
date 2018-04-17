@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 
 
+
 namespace WebApplication19.Models
 {
     public class Parameters
@@ -33,7 +34,7 @@ namespace WebApplication19.Models
 
         public double X = 1;  // współczynnik bezpieczeństwa
 
-        public double Z=0.8; // Współczynnik zmniejszenie minimalnego wydatku - poprawia dobór automatyczny
+        public double Z = 0.8; // Współczynnik zmniejszenie minimalnego wydatku - poprawia dobór automatyczny
 
 
 
@@ -52,9 +53,61 @@ namespace WebApplication19.Models
         public int VMinK1200 = 800;  //Min wydatek dla K1200
 
 
+        public int NI;
+
+
+        public AHU[] ahu = {      // Dane dotyczące cech bez względu na osprzęt
+
+        new AHU { ID=1 , Name="Amber 1 K-300" },
+        new AHU { ID=2 , Name="Amber 1 K-500" },
+        new AHU { ID=3 , Name="Amber 1 K-800" },
+        new AHU { ID=5 , Name="Amber 1 K-1200" },
+
+        new AHU { ID=11 , Name="Amber 1 KP-300" },
+        new AHU { ID=12 , Name="Amber 1 KP-500" },
+        new AHU { ID=13 , Name="Amber 1 KP-800" },
+        new AHU { ID=15 , Name="Amber 1 KP-1200" },
 
 
 
+        new AHU { ID=21 , Name="Amber 1 P-300" },
+        new AHU { ID=22 , Name="Amber 1 P-500" },
+        new AHU { ID=23 , Name="Amber 1 P-800" },
+        new AHU { ID=24 , Name="Amber 1 P-1200" },
+
+
+        new AHU { ID=31 , Name="Amber 1 PP-300" },
+        new AHU { ID=32 , Name="Amber 1 PP-500" },
+        new AHU { ID=33 , Name="Amber 1 PP-800" },
+        new AHU { ID=34 , Name="Amber 1 PP-1200" },
+
+
+        new AHU { ID=41 , Name="Amber 1 O-300" },
+        new AHU { ID=42 , Name="Amber 1 O-500" },
+        new AHU { ID=43 , Name="Amber 1 O-800" },
+        new AHU { ID=44 , Name="Amber 1 O-1200" },
+
+
+        new AHU { ID=51 , Name="Amber 1 OP-300" },
+        new AHU { ID=52 , Name="Amber 1 OP-500" },
+        new AHU { ID=53 , Name="Amber 1 OP-800" },
+        new AHU { ID=54 , Name="Amber 1 OP-1200" },
+
+
+        new AHU { ID=121 , Name="Amber 2 P-300" },
+        new AHU { ID=122 , Name="Amber 2 P-500" },
+        new AHU { ID=123 , Name="Amber 2 P-800" },
+        new AHU { ID=124 , Name="Amber 2 P-1200" },
+
+
+        new AHU { ID=244 , Name="Amber 1 O-1200 Wersja Dachowa" },
+       
+
+
+        };
+
+
+            
 
 
 

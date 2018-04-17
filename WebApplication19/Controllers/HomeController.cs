@@ -461,6 +461,29 @@ namespace WebApplication19.Controllers
                     }
 
 
+
+
+            for (int i = 0; i < parameters.ahu.Length; i++)  // ustalam wartość indexu  tablicy dla n
+            {
+                if (parameters.ahu[i].ID == n)
+                {
+
+                    ViewBag.Name = parameters.ahu[i].Name;
+
+                    ViewBag.NI = i;  // Wartość indexu tablicy dla n
+
+                    
+                    break;
+
+                }
+               
+
+            }
+
+
+
+
+
                     ViewBag.Sprez = a;
                     ViewBag.Wydatek = b;
                     ViewBag.Centrala = n;
@@ -658,6 +681,31 @@ namespace WebApplication19.Controllers
 
 
 
+
+
+
+
+            for (int i = 0; i < parameters.ahu.Length; i++)  // ustalam wartość indexu  tablicy dla n
+            {
+                if (parameters.ahu[i].ID == n)
+                {
+
+                    ViewBag.Name = parameters.ahu[i].Name;
+
+                    ViewBag.NI = i;  // Wartość indexu tablicy dla n
+
+
+                    break;
+
+                }
+               
+
+            }
+
+
+
+
+
             ViewBag.Sprez = a;
             ViewBag.Wydatek = b;
             ViewBag.Centrala = n;
@@ -794,6 +842,26 @@ namespace WebApplication19.Controllers
                 n = 0;
                 attention = " - Spręż dyspozycyjny przekroczono";
                 Approve = false;
+
+            }
+
+
+
+
+            for (int i = 0; i < parameters.ahu.Length; i++)  // ustalam wartość indexu  tablicy dla n
+            {
+                if (parameters.ahu[i].ID == n)
+                {
+
+                    ViewBag.Name = parameters.ahu[i].Name;
+
+                    ViewBag.NI = i;  // Wartość indexu tablicy dla n
+
+
+                    break;
+
+                }
+               
 
             }
 
