@@ -158,6 +158,7 @@
     <Content Include="Content\Menu.css" />
     <Content Include="Content\ChoiseStyle.css" />
     <Content Include="Content\Stripe.css" />
+    <Content Include="Content\SelectionStyle.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

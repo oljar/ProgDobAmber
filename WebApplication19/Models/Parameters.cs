@@ -32,6 +32,12 @@ namespace WebApplication19.Models
 
         public int Montaz { get; set; }
 
+        [Required(ErrorMessage = "Proszę podać czy centrala ma posiadać narzewnicę elektryczną wtórną wbudowaną ")]
+        public bool HeIn { get; set; }
+
+        [Required(ErrorMessage = "Proszę podać czy centrala ma posiadać narzewnicę wodną wtórną wbudowaną ")]
+        public bool WoIn { get; set; }
+
         public double X = 1;  // współczynnik bezpieczeństwa
 
         public double Z = 0.8; // Współczynnik zmniejszenie minimalnego wydatku - poprawia dobór automatyczny
@@ -51,6 +57,15 @@ namespace WebApplication19.Models
         public int VMin800 = 530;   //Min wydatek dla 800
         public int VMin1200 = 900;  //Min wydatek dla 1200
         public int VMinK1200 = 800;  //Min wydatek dla K1200
+
+        public string SymHeIn = "-1"; // symbol z nagrzewnicą   elektryczną 
+
+        public string SymHeOff = "-0";// symbol bez nagrzewnicy  elektrycznej
+
+        public string SymWoIN = "-W";//symbol z nagrzewnicą elektryczną
+
+        public string SymWoOff = "-0";//symbol z nagrzewnicą elektryczną
+
 
 
         public int NI;
@@ -100,7 +115,7 @@ namespace WebApplication19.Models
         new AHU { ID=124 , Name="Amber 2 P-1200" },
 
 
-        new AHU { ID=244 , Name="Amber 1 O-1200 Wersja Dachowa" },
+        new AHU { ID=244 , Name="Amber 1 Wersja Dachowa O-1200"  },
        
 
 

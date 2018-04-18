@@ -14,7 +14,7 @@
    width:40vw;
    height:75vh;
    float: right;
-   border:groove;
+   
    margin-top:10px
 
 }
@@ -25,3 +25,5 @@
     height: 75vh;
     float: left;
 }
+
+

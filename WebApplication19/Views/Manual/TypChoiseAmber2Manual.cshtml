@@ -112,6 +112,30 @@
     </div>
 
 
+      <div class="distance">
+
+             <h4>Czy centrala ma posiadać  wbudowaną nagrzewnicę elektryczną wtórną ?</h4>
+
+                     @Html.DropDownListFor(m => m.HeIn,
+       new SelectList(
+
+                   new List<Object> {
+                       new  { value = true, text = "Tak" },
+                       new  { value = false , text = "Nie"},
+
+                },
+              "value",
+              "text",
+              1
+       ),
+        "Wybierz",
+                  new { @class = "form-control" }
+    )
+                 
+                 
+        
+        
+    </div>
 
 
 

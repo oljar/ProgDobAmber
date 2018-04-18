@@ -504,12 +504,15 @@ namespace WebApplication19.Controllers
                     ViewBag.VMin800 = parameters.VMin800;
                     ViewBag.VMin1200 = parameters.VMin1200;
                     ViewBag.VMinK1200 = parameters.VMinK1200;
+                    ViewBag.HeIn = parameters.HeIn;
+                    ViewBag.SymHeIn = parameters.SymHeIn;
+                    ViewBag.SymHeOff = parameters.SymHeOff;
 
 
 
 
 
-                    if (ModelState.IsValid)
+            if (ModelState.IsValid)
                     {
                         ViewBag.Message = "Dobór Automatyczny - Amber 1" + attention;
                         return View("Selection");
@@ -726,6 +729,9 @@ namespace WebApplication19.Controllers
             ViewBag.VMin800 = parameters.VMin800;
             ViewBag.VMin1200 = parameters.VMin1200;
             ViewBag.VMinK1200 = parameters.VMinK1200;
+            ViewBag.HeIn = parameters.HeIn;
+            ViewBag.SymHeIn = parameters.SymHeIn;
+            ViewBag.SymHeOff = parameters.SymHeOff;
 
 
 
@@ -888,6 +894,9 @@ namespace WebApplication19.Controllers
             ViewBag.VMin800 = parameters.VMin800;
             ViewBag.VMin1200 = parameters.VMin1200;
             ViewBag.VMinK1200 = parameters.VMinK1200;
+            ViewBag.HeIn = parameters.HeIn;
+            ViewBag.SymHeIn = parameters.SymHeIn;
+            ViewBag.SymHeOff = parameters.SymHeOff;
 
 
 

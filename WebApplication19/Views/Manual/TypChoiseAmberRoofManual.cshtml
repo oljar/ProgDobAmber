@@ -108,6 +108,7 @@
              <h4> Podaj opór instalacji [Pa] :</h4>
 
                       @Html.TextBoxFor(m => m.Sprez,
+
         new { @class = "form-control" }) 
                  
                  
@@ -115,9 +116,30 @@
         
     </div>
 
+     <div class="distance1">
 
+             <h4>Czy centrala ma posiadać  wbudowaną nagrzewnicę wodną wtórną ?</h4>
 
+                       @Html.DropDownListFor(m => m.WoIn,
+       new SelectList(
 
+                   new List<Object> {
+                       new  { value = true, text = "Tak" },
+                       new  { value = false , text = "Nie"},
+
+                },
+              "value",
+              "text",
+              1
+       ),
+        "Wybierz",
+                  new { @class = "form-control" }
+    )
+                 
+                 
+        
+        
+    </div>
 
 
 
