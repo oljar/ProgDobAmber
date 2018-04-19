@@ -515,7 +515,7 @@ namespace WebApplication19.Controllers
             if (ModelState.IsValid)
                     {
                         ViewBag.Message = "Dobór Automatyczny - Amber 1" + attention;
-                        return View("Selection");
+                        return View("SelectionA1X");
                     }
                     else
 
@@ -741,7 +741,7 @@ namespace WebApplication19.Controllers
             if (ModelState.IsValid)
             {
                 ViewBag.Message = "Dobór Automatyczny - Amber 2" + attention;
-                return View("Selection");
+                return View("SelectionA2P");
             }
             else
 
@@ -894,9 +894,9 @@ namespace WebApplication19.Controllers
             ViewBag.VMin800 = parameters.VMin800;
             ViewBag.VMin1200 = parameters.VMin1200;
             ViewBag.VMinK1200 = parameters.VMinK1200;
-            ViewBag.HeIn = parameters.HeIn;
-            ViewBag.SymHeIn = parameters.SymHeIn;
-            ViewBag.SymHeOff = parameters.SymHeOff;
+            ViewBag.WoIn = parameters.WoIn;
+            ViewBag.SymWoIn = parameters.SymWoIn;
+            ViewBag.SymWoOff = parameters.SymWoOff;
 
 
 
@@ -907,7 +907,7 @@ namespace WebApplication19.Controllers
             if (ModelState.IsValid)
             {
                 ViewBag.Message = "Dobór Automatyczny - Amber 1 - Wer. Dachowa" + attention;
-                return View("Selection");
+                return View("SelectionA1Roof");
             }
             else
 

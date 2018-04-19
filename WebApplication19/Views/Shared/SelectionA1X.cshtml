@@ -1,0 +1,174 @@
+﻿
+@model WebApplication19.Models.Parameters
+
+
+   <div id="win1">@Html.Partial("Chart")</div>
+    
+    
+    
+
+    @if (ViewBag.Approve == true)
+
+   
+
+      {
+      <div id="win2"> 
+            
+          
+      <h4 style="margin-left:10px "> Dobrano centralkę:</h4>
+                
+                
+            
+                        @if (ViewBag.HeIn==true)
+                        {
+                         
+                        <h3 id="center"><strong> @ViewBag.Name@ViewBag.SymHeIn</strong></h3>
+                         <h4 id="center">Z nagrzewnicą elektryczna wbudowaną</h4>
+                        }
+                        else
+                        {
+                         <h3 id="center"><strong> @ViewBag.Name@ViewBag.SymHeOff</strong></h3>
+                         <h4 id="center">Bez nagrzewnicy elektrycznej wbudowanej</h4>
+                        }
+
+                 
+            
+          
+      <h4 style="margin:35px 0 30px 10px "> Proszę wskazać wersję wykonania:</h4>
+
+
+      <div id="win3">
+          
+
+
+
+
+         @if (ViewBag.Centrala == 1 || ViewBag.Centrala == 2  || ViewBag.Centrala == 3  || ViewBag.Centrala == 5)   // ikony strony obsługowej  A1K
+          {
+
+           <button type="button" class="left" onclick="location.href='@Url.Action("TypChoiseAmber1Manual", "Manual")'" >       
+           <p><strong> Lewa</strong></p>
+             <img alt="New" title="Amber 1" src="~/Image/A1K-L_small.jpg"height="200" width="250" >
+           </button>
+
+
+           <button type="button" class="right" onclick="location.href='@Url.Action("TypChoiseAmber2Manual", "Manual")'" >
+           <p><strong>Prawa</strong></p>
+             <img alt="New" title="Amber 1" src="~/Image/A1K-P_small.jpg"height="200" width="250" >
+           </button>
+
+
+ 
+          }
+
+          else if (ViewBag.Centrala == 11 || ViewBag.Centrala == 12 || ViewBag.Centrala == 13 || ViewBag.Centrala == 15)       //A1KP
+          {  
+            <button type="button" class="left" onclick="location.href='@Url.Action("TypChoiseAmber1Manual", "Manual")'" >
+            <p><strong> Lewa</strong></p>
+            <img alt="New" title="Amber 1" src="~/Image/A1KP-L_small.jpg"height="200" width="250" >
+            </button>
+
+
+            <button type="button" class="right" onclick="location.href='@Url.Action("TypChoiseAmber2Manual", "Manual")'" >
+            <p><strong>Prawa</strong></p>
+            <img alt="New" title="Amber 1" src="~/Image/A1KP-P_small.jpg"height="200" width="250" >
+            </button>
+          }
+
+
+
+           else if (ViewBag.Centrala == 21 || ViewBag.Centrala == 22 || ViewBag.Centrala == 23 || ViewBag.Centrala == 24)      //A1P
+          {  
+            <button type="button" class="left" onclick="location.href='@Url.Action("TypChoiseAmber1Manual", "Manual")'" >
+            <p><strong> Lewa</strong></p>
+            <img alt="New" title="Amber 1" src="~/Image/A1P-L_small.jpg"height="200" width="250" >
+            </button>
+
+
+            <button type="button" class="right" onclick="location.href='@Url.Action("TypChoiseAmber2Manual", "Manual")'" >
+            <p><strong>Prawa</strong></p>
+            <img alt="New" title="Amber 1" src="~/Image/A1P-P_small.jpg"height="200" width="250" >
+            </button>
+          }
+
+
+           else if (ViewBag.Centrala == 31 || ViewBag.Centrala == 32 || ViewBag.Centrala == 33 || ViewBag.Centrala == 34)   // A1PP
+          {  
+            <button type="button" class="left" onclick="location.href='@Url.Action("TypChoiseAmber1Manual", "Manual")'" >
+            <p><strong> Lewa</strong></p>
+            <img alt="New" title="Amber 1" src="~/Image/A1PP-L_small.jpg"height="200" width="250" >
+            </button>
+
+
+            <button type="button" class="right" onclick="location.href='@Url.Action("TypChoiseAmber2Manual", "Manual")'" >
+            <p><strong>Prawa</strong></p>
+            <img alt="New" title="Amber 1" src="~/Image/A1PP-P_small.jpg"height="200" width="250" >
+            </button>
+          }
+
+
+
+           else if (ViewBag.Centrala == 41 || ViewBag.Centrala == 42 || ViewBag.Centrala == 43 || ViewBag.Centrala == 44)   // A1O
+          {  
+            <button type="button" class="left" onclick="location.href='@Url.Action("TypChoiseAmber1Manual", "Manual")'" >
+            <p><strong> Lewa</strong></p>
+            <img alt="New" title="Amber 1" src="~/Image/A1O-L_small.jpg"height="200" width="250" >
+            </button>
+
+
+            <button type="button" class="right" onclick="location.href='@Url.Action("TypChoiseAmber2Manual", "Manual")'" >
+            <p><strong>Prawa</strong></p>
+            <img alt="New" title="Amber 1" src="~/Image/A1O-P_small.jpg"height="200" width="250" >
+            </button>
+          }
+
+
+             else if (ViewBag.Centrala == 51 || ViewBag.Centrala == 52 || ViewBag.Centrala == 53 || ViewBag.Centrala == 54)   // A1OP
+          {  
+            <button type="button" class="left" onclick="location.href='@Url.Action("TypChoiseAmber1Manual", "Manual")'" >
+            <p><strong> Lewa</strong></p>
+            <img alt="New" title="Amber 1" src="~/Image/A1OP-L_small.jpg"height="200" width="250" >
+            </button>
+
+
+            <button type="button" class="right" onclick="location.href='@Url.Action("TypChoiseAmber2Manual", "Manual")'" >
+            <p><strong>Prawa</strong></p>
+            <img alt="New" title="Amber 1" src="~/Image/A1OP-P_small.jpg"height="200" width="250" >
+            </button>
+          }
+
+      </div> 
+
+      </div>
+     
+
+    }
+         
+
+        else
+
+        
+        {
+            <div id = "win2"> Parametry poza zakresem pracy </div>
+        }
+   
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

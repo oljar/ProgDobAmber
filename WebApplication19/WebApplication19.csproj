@@ -165,6 +165,22 @@
     <Content Include="Content\Site.css" />
     <Content Include="Image\182.jpg" />
     <Content Include="Image\234.jpg" />
+    <Content Include="Image\A1DO-L_small.jpg" />
+    <Content Include="Image\A1DO-P_small.jpg" />
+    <Content Include="Image\A1K-L_small.jpg" />
+    <Content Include="Image\A1K-P_small.jpg" />
+    <Content Include="Image\A1KP-L_small.jpg" />
+    <Content Include="Image\A1KP-P_small.jpg" />
+    <Content Include="Image\A1O-L_small.jpg" />
+    <Content Include="Image\A1O-P_small.jpg" />
+    <Content Include="Image\A1OP-L_small.jpg" />
+    <Content Include="Image\A1OP-P_small.jpg" />
+    <Content Include="Image\A1P-P_small.jpg" />
+    <Content Include="Image\A1P-L_small.jpg" />
+    <Content Include="Image\A1PP-L_small.jpg" />
+    <Content Include="Image\A1PP-P_small.jpg" />
+    <Content Include="Image\A2P1200_small.jpg" />
+    <Content Include="Image\A2P500_small.jpg" />
     <Content Include="Image\logo.png" />
     <Content Include="Image\O-1200-DO.bmp" />
     <Content Include="Scripts\bootstrap.js" />
@@ -286,7 +302,9 @@
     <Content Include="Views\Manual\TypChoiseAmber1Manual.cshtml" />
     <Content Include="Views\Manual\TypChoiseAmber2Manual.cshtml" />
     <Content Include="Views\Manual\TypChoiseAmberRoofManual.cshtml" />
-    <Content Include="Views\Shared\Selection.cshtml" />
+    <Content Include="Views\Shared\SelectionA1X.cshtml" />
+    <Content Include="Views\Shared\SelectionA2P.cshtml" />
+    <Content Include="Views\Shared\SelectionA1Roof.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

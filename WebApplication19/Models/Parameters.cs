@@ -62,7 +62,7 @@ namespace WebApplication19.Models
 
         public string SymHeOff = "-0";// symbol bez nagrzewnicy  elektrycznej
 
-        public string SymWoIN = "-W";//symbol z nagrzewnicą elektryczną
+        public string SymWoIn = "-W";//symbol z nagrzewnicą elektryczną
 
         public string SymWoOff = "-0";//symbol z nagrzewnicą elektryczną
 

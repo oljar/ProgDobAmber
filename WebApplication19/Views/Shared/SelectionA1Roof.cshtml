@@ -1,0 +1,103 @@
+﻿
+@model WebApplication19.Models.Parameters
+
+
+   <div id="win1">@Html.Partial("Chart")</div>
+    
+    
+    
+
+    @if (ViewBag.Approve == true)
+
+   
+
+      {
+      <div id="win2"> 
+            
+          
+      <h4 style="margin-left:10px "> Dobrano centralkę:</h4>
+                
+                
+            
+                        @if (ViewBag.WoIn==true)
+                        {
+                         
+                        <h3 id="center"><strong> @ViewBag.Name@ViewBag.SymWoIn</strong></h3>
+                         <h4 id="center">Z nagrzewnicą wodną wbudowaną</h4>
+                        }
+                        else
+                        {
+                         <h3 id="center"><strong> @ViewBag.Name@ViewBag.SymWoOff</strong></h3>
+                         <h4 id="center">Bez nagrzewnicy wodnej wbudowanej</h4>
+                        }
+
+                 
+            
+          
+      <h4 style="margin:35px 0 30px 10px "> Proszę wskazać wersję wykonania:</h4>
+
+
+      <div id="win3">
+          
+
+
+
+
+         @if (ViewBag.Centrala == 244)   // ikony strony obsługowej  A1K
+          {
+
+           <button type="button" class="left" onclick="location.href='@Url.Action("TypChoiseAmber1Manual", "Manual")'" >       
+           <p><strong> Lewa</strong></p>
+             <img alt="New" title="Amber 1" src="~/Image/A1DO-L_small.jpg"height="200" width="250" >
+           </button>
+
+
+           <button type="button" class="right" onclick="location.href='@Url.Action("TypChoiseAmber2Manual", "Manual")'" >
+           <p><strong>Prawa</strong></p>
+             <img alt="New" title="Amber 1" src="~/Image/A1DO-P_small.jpg"height="200" width="250" >
+           </button>
+
+
+ 
+          }
+
+         
+
+
+          
+
+      </div> 
+
+      </div>
+     
+
+    }
+         
+
+        else
+
+        
+        {
+            <div id = "win2"> Parametry poza zakresem pracy </div>
+        }
+   
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
