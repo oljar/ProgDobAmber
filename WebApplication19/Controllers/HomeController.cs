@@ -959,7 +959,22 @@ namespace WebApplication19.Controllers
             int ni = (int)TempData["NI"];
 
             ViewBag.Name = parameters.ahu[ni].Name;
-          
+            ViewBag.Breadth = parameters.ahu[ni].Breadth;
+            ViewBag.Height = parameters.ahu[ni].Height;
+            ViewBag.Lenght = parameters.ahu[ni].Lenght;
+            ViewBag.Diameter = parameters.ahu[ni].Diameter;
+            ViewBag.Weight = parameters.ahu[ni].Weight;
+            ViewBag.NomOut = parameters.ahu[ni].NomOut;
+            ViewBag.ExtPres = parameters.ahu[ni].ExtPres;
+            ViewBag.FanPow = parameters.ahu[ni].FanPow;
+            ViewBag.HePower = parameters.ahu[ni].HePower;
+            ViewBag.SupVol = parameters.ahu[ni].SupVol;
+            ViewBag.Power = parameters.ahu[ni].Power;
+            ViewBag.Efficiency = parameters.ahu[ni].Efficiency;
+            ViewBag.SoundLevel = parameters.ahu[ni].SoundLevel; 
+            ViewBag.PowClass = parameters.ahu[ni].PowClass;
+
+
 
 
 
