@@ -303,8 +303,6 @@
     <Content Include="Views\Manual\TypChoiseAmber2Manual.cshtml" />
     <Content Include="Views\Manual\TypChoiseAmberRoofManual.cshtml" />
     <Content Include="Views\Shared\AhuData.cshtml" />
-    <Content Include="Views\Home\AhuData.cshtml" />
-    <Content Include="Views\Manual\AhuData.cshtml" />
     <Content Include="Views\Shared\SelectionA2P.cshtml" />
     <Content Include="Views\Shared\SelectionA1Roof.cshtml" />
     <Content Include="Views\Shared\SelectionA1X.cshtml" />
