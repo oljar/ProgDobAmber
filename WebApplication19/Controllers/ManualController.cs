@@ -343,6 +343,8 @@ namespace WebApplication19.Controllers
 
                     ViewBag.NI = i;  // Wartość indexu tablicy dla n
 
+                    TempData["NI"] = i; // Wartość indexu tablicy dla n
+
 
                     break;
 
@@ -509,6 +511,8 @@ namespace WebApplication19.Controllers
 
                     ViewBag.NI = i;  // Wartość indexu tablicy dla n
 
+                    TempData["NI"] = i; // Wartość indexu tablicy dla n
+
 
                     break;
 
@@ -643,6 +647,8 @@ namespace WebApplication19.Controllers
 
                     ViewBag.NI = i;  // Wartość indexu tablicy dla n
 
+                    TempData["NI"] = i; // Wartość indexu tablicy dla n
+
 
                     break;
 
@@ -694,9 +700,26 @@ namespace WebApplication19.Controllers
                 return View();
             }
 
+
+
         }
 
+        public ActionResult AhuData(Parameters parameters)
 
+
+        {
+            ViewBag.Message = "Paramerty centralki";
+
+
+            int ni = (int)TempData["NI"];
+
+            ViewBag.Name = parameters.ahu[ni].Name;
+
+
+
+            return View(parameters);
+
+        }
 
     }
 

@@ -472,7 +472,9 @@ namespace WebApplication19.Controllers
 
                     ViewBag.NI = i;  // Wartość indexu tablicy dla n
 
-                    
+                    TempData["NI"] = i; // Wartość indexu tablicy dla n
+
+
                     break;
 
                 }
@@ -697,6 +699,8 @@ namespace WebApplication19.Controllers
 
                     ViewBag.NI = i;  // Wartość indexu tablicy dla n
 
+                    TempData["NI"] = i; // Wartość indexu tablicy dla n
+
 
                     break;
 
@@ -862,6 +866,9 @@ namespace WebApplication19.Controllers
                     ViewBag.Name = parameters.ahu[i].Name;
 
                     ViewBag.NI = i;  // Wartość indexu tablicy dla n
+                    TempData["NI"] = i; // Wartość indexu tablicy dla n
+
+
 
 
                     break;
@@ -900,14 +907,15 @@ namespace WebApplication19.Controllers
 
 
 
-
+            
+           
 
 
 
             if (ModelState.IsValid)
             {
                 ViewBag.Message = "Dobór Automatyczny - Amber 1 - Wer. Dachowa" + attention;
-                return View("SelectionA1Roof");
+                return View("SelectionA1Roof",parameters);
             }
             else
 
@@ -933,9 +941,31 @@ namespace WebApplication19.Controllers
             return View();
         }
 
-      
 
-      
+
+
+
+       
+
+
+        public ActionResult AhuData(Parameters parameters)
+
+
+        {
+            ViewBag.Message = "Paramerty centralki";
+
+
+
+            int ni = (int)TempData["NI"];
+
+            ViewBag.Name = parameters.ahu[ni].Name;
+          
+
+
+
+            return View(parameters);
+
+        }
 
     }
 
