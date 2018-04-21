@@ -18,8 +18,10 @@ namespace WebApplication19.Models
         public int ExtPres { get; set;}
         public int FanPow { get; set; }
         public int HePower { get; set; }
+        public int WoPower { get; set; }
+        public string SupVolHe { get; set; }
         public string SupVol { get; set; }
-        public int Power { get; set; }
+        public int TotPowCons { get; set; }
         public double Efficiency { get; set; }
         public int SoundLevel { get; set; }
         public string PowClass { get; set; }
