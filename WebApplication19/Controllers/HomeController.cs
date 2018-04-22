@@ -926,7 +926,10 @@ namespace WebApplication19.Controllers
             TempData["SymWoIn"] = parameters.SymWoIn;
             TempData["SymWoOff"] = parameters.SymWoOff;
             TempData["HeIn"] = false;
-           
+            
+
+
+
 
 
 
@@ -1058,14 +1061,15 @@ namespace WebApplication19.Controllers
             ViewBag.Lenght = parameters.ahu[ni].Lenght;
             ViewBag.Diameter = parameters.ahu[ni].Diameter;
             ViewBag.Weight = parameters.ahu[ni].Weight;
-            ViewBag.NomOut = parameters.ahu[ni].NomOut;
-            ViewBag.ExtPres = parameters.ahu[ni].ExtPres;
+            ViewBag.NomOut = TempData["Wydatek"];
+            ViewBag.ExtPres = TempData["Sprez"];
             ViewBag.FanPow = parameters.ahu[ni].FanPow;
             ViewBag.HePower = parameters.ahu[ni].HePower;
             ViewBag.SupVol = parameters.ahu[ni].SupVol;      
             ViewBag.Efficiency = parameters.ahu[ni].Efficiency;
             ViewBag.SoundLevel = parameters.ahu[ni].SoundLevel; 
             ViewBag.PowClass = parameters.ahu[ni].PowClass;
+            ViewBag.WoPower = parameters.ahu[ni].WoPower;
 
 
 

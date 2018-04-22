@@ -2,8 +2,104 @@
 
 @model WebApplication19.Models.Parameters
 
-<p>@ViewBag.Name</p>
-<p>@ViewBag.TotPowCons</p>
-<p>@ViewBag.Lenght</p>
 
 
+
+<div class="container">
+  <h2>@ViewBag.Name</h2>
+        
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Parametr</th>
+        <th>Wartość</th>
+        <th>Jednostka</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Natężenie objętościowe powietrza</td>
+        <td>@ViewBag.NomOut</td>
+        <td>m3/h</td>
+      </tr>
+      <tr>
+        <td>Spręż dyspozycyjny</td>
+        <td>@ViewBag.ExtPres</td>
+        <td>Pa</td>
+      </tr>
+      <tr>
+        <td>Całkowity max. pobór mocy</td>
+        <td>@ViewBag.TotPowCons</td>
+        <td>W</td>
+      </tr>
+      <tr>
+        <td>Max. pobór mocy wentylatorów</td>
+        <td>@ViewBag.FanPow</td>
+        <td>W</td>
+      </tr>
+      <tr>
+        <td>Max. pobór mocy nagrzewnicy elektrycznej wbudowanej - wtórnej</td>
+        <td>@ViewBag.HePower</td>
+        <td>W</td>
+      </tr>
+      <tr>
+        <td>Max. pobór mocy nagrzewnicy wodnej wbudowanej - wtórnej</td>
+        <td>@ViewBag.WoPower</td>
+        <td>W</td>
+      </tr>
+      <tr>
+        <td>Napięcie zasilania/częstotliwość</td>
+        <td>@ViewBag.SupVol </td>
+        <td>V/Hz</td>
+      </tr>
+      <tr>
+        <td>Max. temperaturowa sprawność wymiennika</td>
+        <td>@ViewBag.Efficiency </td>
+        <td>%</td>
+      </tr>
+      <tr>
+        <td>Max. poziom mocy akustycznej mierzony 1 m od obudowy </td>
+        <td>@ViewBag.SoundLevel </td>
+        <td>db(A)</td>
+      </tr>
+      <tr>
+        <td>Klasa energetyczna </td>
+        <td>@ViewBag.PowClass </td>
+        <td></td>
+      </tr>
+      
+      <tr>
+        <td>B - Szerokość </td>
+        <td>@ViewBag.Breadth </td>
+        <td>mm</td>
+      </tr>
+      <tr>
+        <td>H - Wysokość</td>
+        <td>@ViewBag.Height </td>
+        <td>mm</td>
+      </tr>
+
+      <tr>
+        <td>L - Długość</td>
+        <td>@ViewBag.Lenght </td>
+        <td>mm</td>
+      </tr>
+      <tr>
+        <td>Średnica króćca przyłączeniowego</td>
+        <td> @ViewBag.Diameter </td>
+        <td>mm</td>
+      </tr>
+
+      <tr>
+        <td>Masa</td>
+        <td> @ViewBag.Weight </td>
+        <td>kg</td>
+      </tr>
+
+
+     
+
+
+    </tbody>
+  </table>
+</div>

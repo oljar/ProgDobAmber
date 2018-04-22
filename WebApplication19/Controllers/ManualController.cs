@@ -355,35 +355,37 @@ namespace WebApplication19.Controllers
 
 
 
-                ViewBag.Sprez = a;
-                ViewBag.Wydatek = b;
-                ViewBag.Centrala = n;
-                ViewBag.Approve = Approve;
-                ViewBag.Z = parameters.Z;
+            ViewBag.Sprez = a;
+            ViewBag.Wydatek = b;
+            ViewBag.Centrala = n;
+            ViewBag.Approve = Approve;
+
+            ViewBag.Z = parameters.Z;
 
 
-                ViewBag.VMax300 = parameters.VMax300;
-                ViewBag.VMax500 = parameters.VMax500;
-                ViewBag.VMax800 = parameters.VMax800;
-                ViewBag.VMax1200 = parameters.VMax1200;
+
+            ViewBag.VMax300 = parameters.VMax300;
+            ViewBag.VMax500 = parameters.VMax500;
+            ViewBag.VMax800 = parameters.VMax800;
+            ViewBag.VMax1200 = parameters.VMax1200;
 
 
-                ViewBag.VMin300 = parameters.VMin300;
-                ViewBag.VMin500 = parameters.VMin500;
-                ViewBag.VMin800 = parameters.VMin800;
-                ViewBag.VMin1200 = parameters.VMin1200;
-                ViewBag.VMinK1200 = parameters.VMinK1200;
-                ViewBag.HeIn = parameters.HeIn;
-                ViewBag.SymHeIn = parameters.SymHeIn;
-                ViewBag.SymHeOff = parameters.SymHeOff;
+            ViewBag.VMin300 = parameters.VMin300;
+            ViewBag.VMin500 = parameters.VMin500;
+            ViewBag.VMin800 = parameters.VMin800;
+            ViewBag.VMin1200 = parameters.VMin1200;
+            ViewBag.VMinK1200 = parameters.VMinK1200;
+            ViewBag.HeIn = parameters.HeIn;
+            ViewBag.SymHeIn = parameters.SymHeIn;
+            ViewBag.SymHeOff = parameters.SymHeOff;
 
 
-                TempData["Sprez"] = a;
-                TempData["Wydatek"] = b;
-                TempData["HeIn"] = parameters.HeIn;
-                TempData["SymHeIn"] = parameters.HeIn;
-                TempData["SymHeOff"] = parameters.HeIn;
-                TempData["WoIn"] = false;
+            TempData["Sprez"] = a;
+            TempData["Wydatek"] = b;
+            TempData["HeIn"] = parameters.HeIn;
+            TempData["SymHeIn"] = parameters.HeIn;
+            TempData["SymHeOff"] = parameters.HeIn;
+            TempData["WoIn"] = false;
 
 
 
@@ -535,6 +537,7 @@ namespace WebApplication19.Controllers
             ViewBag.Wydatek = b;
             ViewBag.Centrala = n;
             ViewBag.Approve = Approve;
+
             ViewBag.Z = parameters.Z;
 
 
@@ -561,6 +564,9 @@ namespace WebApplication19.Controllers
             TempData["SymHeIn"] = parameters.HeIn;
             TempData["SymHeOff"] = parameters.HeIn;
             TempData["WoIn"] = false;
+
+
+
 
 
 
@@ -673,6 +679,7 @@ namespace WebApplication19.Controllers
             ViewBag.Wydatek = b;
             ViewBag.Centrala = n;
             ViewBag.Approve = Approve;
+
             ViewBag.Z = parameters.Z;
 
 
@@ -692,13 +699,13 @@ namespace WebApplication19.Controllers
             ViewBag.SymWoIn = parameters.SymWoIn;
             ViewBag.SymWoOff = parameters.SymWoOff;
 
-
             TempData["Sprez"] = a;
             TempData["Wydatek"] = b;
             TempData["WoIn"] = parameters.WoIn;
             TempData["SymWoIn"] = parameters.SymWoIn;
             TempData["SymWoOff"] = parameters.SymWoOff;
             TempData["HeIn"] = false;
+
 
 
 
@@ -814,19 +821,25 @@ namespace WebApplication19.Controllers
             }
 
 
+
+
             ViewBag.Breadth = parameters.ahu[ni].Breadth;
             ViewBag.Height = parameters.ahu[ni].Height;
             ViewBag.Lenght = parameters.ahu[ni].Lenght;
             ViewBag.Diameter = parameters.ahu[ni].Diameter;
             ViewBag.Weight = parameters.ahu[ni].Weight;
-            ViewBag.NomOut = parameters.ahu[ni].NomOut;
-            ViewBag.ExtPres = parameters.ahu[ni].ExtPres;
+            ViewBag.NomOut = TempData["Wydatek"];
+            ViewBag.ExtPres = TempData["Sprez"];
             ViewBag.FanPow = parameters.ahu[ni].FanPow;
             ViewBag.HePower = parameters.ahu[ni].HePower;
             ViewBag.SupVol = parameters.ahu[ni].SupVol;
             ViewBag.Efficiency = parameters.ahu[ni].Efficiency;
             ViewBag.SoundLevel = parameters.ahu[ni].SoundLevel;
             ViewBag.PowClass = parameters.ahu[ni].PowClass;
+            ViewBag.WoPower = parameters.ahu[ni].WoPower;
+
+
+
 
 
 
