@@ -25,6 +25,7 @@ namespace WebApplication19.Models
         public double Efficiency { get; set; }
         public int SoundLevel { get; set; }
         public string PowClass { get; set; }
+        public int RotPowCons { get; set; }
      
     }
 }

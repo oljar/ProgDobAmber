@@ -97,16 +97,16 @@ namespace WebApplication19.Models
         new AHU { ID=34 , Name="Amber 1 PP-1200", Breadth=1300, Height=375, Lenght= 1600, Diameter= 315, Weight= 145, ExtPres=300, FanPow= 166, HePower=4000, SupVolHe="3x400/50", SupVol="230/50",  Efficiency=90.4 , PowClass="A+", SoundLevel= 49},
 
 
-        new AHU { ID=41 , Name="Amber 1 O-300", Breadth=510, Height=630, Lenght= 750, Diameter= 160, Weight= 52, ExtPres=285, FanPow= 166, HePower=1000, SupVolHe="230/50", SupVol="230/50",  Efficiency=84.3 , PowClass="A", SoundLevel= 45 },
-        new AHU { ID=42 , Name="Amber 1 O-500", Breadth=610, Height=730, Lenght= 750, Diameter= 200, Weight= 69, ExtPres=285, FanPow= 230, HePower=2000, SupVolHe="230/50", SupVol="230/50",  Efficiency=84.2 , PowClass="A", SoundLevel= 46 },
-        new AHU { ID=43 , Name="Amber 1 O-800", Breadth=710, Height=780, Lenght= 800, Diameter= 250, Weight= 85, ExtPres=280, FanPow= 340, HePower=3000, SupVolHe="3x400/50", SupVol="230/50",  Efficiency=83.2 , PowClass="A", SoundLevel= 47 },
-        new AHU { ID=44 , Name="Amber 1 O-1200", Breadth=810, Height=880, Lenght= 850, Diameter= 315, Weight= 110, ExtPres=305, FanPow= 680, HePower=4000, SupVolHe="3x400/50", SupVol="230/50",  Efficiency=81.8 , PowClass="A", SoundLevel= 49 },
+        new AHU { ID=41 , Name="Amber 1 O-300", Breadth=510, Height=630, Lenght= 750, Diameter= 160, Weight= 52, ExtPres=285, FanPow= 166, HePower=1000, SupVolHe="230/50", SupVol="230/50",  Efficiency=84.3 , PowClass="A", SoundLevel= 45, RotPowCons=40 },
+        new AHU { ID=42 , Name="Amber 1 O-500", Breadth=610, Height=730, Lenght= 750, Diameter= 200, Weight= 69, ExtPres=285, FanPow= 230, HePower=2000, SupVolHe="230/50", SupVol="230/50",  Efficiency=84.2 , PowClass="A", SoundLevel= 46, RotPowCons=40 },
+        new AHU { ID=43 , Name="Amber 1 O-800", Breadth=710, Height=780, Lenght= 800, Diameter= 250, Weight= 85, ExtPres=280, FanPow= 340, HePower=3000, SupVolHe="3x400/50", SupVol="230/50",  Efficiency=83.2 , PowClass="A", SoundLevel= 47, RotPowCons=40 },
+        new AHU { ID=44 , Name="Amber 1 O-1200", Breadth=810, Height=880, Lenght= 850, Diameter= 315, Weight= 110, ExtPres=305, FanPow= 680, HePower=4000, SupVolHe="3x400/50", SupVol="230/50",  Efficiency=81.8 , PowClass="A", SoundLevel= 49, RotPowCons=40 },
 
 
-        new AHU { ID=51 , Name="Amber 1 OP-300", Breadth=600, Height=400, Lenght= 1250, Diameter= 160, Weight= 56, ExtPres=235, FanPow= 166, HePower=1000, SupVolHe="230/50", SupVol="230/50", Efficiency=78.5 , PowClass="A", SoundLevel= 45 },
-        new AHU { ID=52 , Name="Amber 1 OP-500", Breadth=835, Height=400, Lenght= 1250, Diameter= 200, Weight= 77, ExtPres=250, FanPow= 230, HePower=2000, SupVolHe="230/50", SupVol="230/50",  Efficiency=81 , PowClass="A", SoundLevel= 46 },
-        new AHU { ID=53 , Name="Amber 1 OP-800", Breadth=1180, Height=400, Lenght= 1350, Diameter= 250, Weight= 110, ExtPres=225, FanPow= 340, HePower=3000, SupVolHe="3x400/50", SupVol="230/50",  Efficiency=80 , PowClass="A", SoundLevel= 47 },
-        new AHU { ID=54 , Name="Amber 1 OP-1200", Breadth=1575, Height=400, Lenght= 1350, Diameter= 315, Weight= 142, ExtPres=270, FanPow= 166, HePower=4000, SupVolHe="3x400/50", SupVol="230/50",  Efficiency=78.5 , PowClass="A", SoundLevel= 49 },
+        new AHU { ID=51 , Name="Amber 1 OP-300", Breadth=600, Height=400, Lenght= 1250, Diameter= 160, Weight= 56, ExtPres=235, FanPow= 166, HePower=1000, SupVolHe="230/50", SupVol="230/50", Efficiency=78.5 , PowClass="A", SoundLevel= 45, RotPowCons=40 },
+        new AHU { ID=52 , Name="Amber 1 OP-500", Breadth=835, Height=400, Lenght= 1250, Diameter= 200, Weight= 77, ExtPres=250, FanPow= 230, HePower=2000, SupVolHe="230/50", SupVol="230/50",  Efficiency=81 , PowClass="A", SoundLevel= 46, RotPowCons=40 },
+        new AHU { ID=53 , Name="Amber 1 OP-800", Breadth=1180, Height=400, Lenght= 1350, Diameter= 250, Weight= 110, ExtPres=225, FanPow= 340, HePower=3000, SupVolHe="3x400/50", SupVol="230/50",  Efficiency=80 , PowClass="A", SoundLevel= 47, RotPowCons=40 },
+        new AHU { ID=54 , Name="Amber 1 OP-1200", Breadth=1575, Height=400, Lenght= 1350, Diameter= 315, Weight= 142, ExtPres=270, FanPow= 166, HePower=4000, SupVolHe="3x400/50", SupVol="230/50",  Efficiency=78.5 , PowClass="A", SoundLevel= 49, RotPowCons=40 },
 
 
         new AHU { ID=121 , Name="Amber 2 P-300", Breadth=500, Height=680, Lenght= 950, Diameter= 160, Weight= 65, ExtPres=275, FanPow= 166, HePower=1000, SupVolHe="230/50", SupVol="230/50",  Efficiency=90, PowClass="A+", SoundLevel= 45},
