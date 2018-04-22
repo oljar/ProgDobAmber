@@ -722,11 +722,68 @@ namespace WebApplication19.Controllers
 
         }
 
+
+
+
+        public ActionResult LeftSide()
+
+        {
+            TempData["Side"] = 1;
+
+            return RedirectToAction("AhuData", "Manual");
+        }
+
+
+
+
+        public ActionResult RightSide()
+
+        {
+            TempData["Side"] = 2;
+
+            return RedirectToAction("AhuData", "Manual");
+        }
+
+
+
+
+        public ActionResult WithoutSide()
+
+        {
+            TempData["Side"] = 0;
+            return RedirectToAction("AhuData", "Home");
+
+        }
+
+
+
+
         public ActionResult AhuData(Parameters parameters)
 
 
         {
+
+            string Side = "";
+
+
             ViewBag.Message = "Paramerty centralki";
+
+
+
+            if ((int)TempData["Side"] == 1)
+            {
+                Side = "-L";
+            }
+            else if ((int)TempData["Side"] == 2)
+            {
+                Side = "-P";
+            }
+
+
+
+
+
+
 
 
 
@@ -735,14 +792,14 @@ namespace WebApplication19.Controllers
 
             if ((bool)TempData["HeIn"] == true && ((bool)TempData["WoIn"] == false))
             {
-                ViewBag.Name = parameters.ahu[ni].Name + parameters.SymHeIn;
+                ViewBag.Name = parameters.ahu[ni].Name + parameters.SymHeIn + Side;
                 ViewBag.TotPowCons = parameters.ahu[ni].FanPow + parameters.ahu[ni].HePower + parameters.ahu[ni].RotPowCons;
 
             }
 
             else if ((bool)TempData["HeIn"] == false && ((bool)TempData["WoIn"] == false))
             {
-                ViewBag.Name = parameters.ahu[ni].Name + parameters.SymHeOff;
+                ViewBag.Name = parameters.ahu[ni].Name + parameters.SymHeOff + Side;
                 ViewBag.TotPowCons = parameters.ahu[ni].FanPow + parameters.ahu[ni].RotPowCons;
 
 
@@ -750,7 +807,7 @@ namespace WebApplication19.Controllers
 
             else if ((bool)TempData["HeIn"] == false && ((bool)TempData["WoIn"] == true))
             {
-                ViewBag.Name = parameters.ahu[ni].Name + parameters.SymWoIn;
+                ViewBag.Name = parameters.ahu[ni].Name + parameters.SymWoIn + Side;
                 ViewBag.TotPowCons = parameters.ahu[ni].FanPow + parameters.ahu[ni].RotPowCons;
 
 

@@ -26,6 +26,7 @@ namespace WebApplication19.Models
         public int SoundLevel { get; set; }
         public string PowClass { get; set; }
         public int RotPowCons { get; set; }
+        public string Side { get; set; }
      
     }
 }
