@@ -562,6 +562,7 @@ namespace WebApplication19.Controllers
                     TempData["SymHeIn"] = parameters.HeIn;
                     TempData["SymHeOff"] = parameters.HeIn;
                     TempData["WoIn"] = false;
+                    TempData["Bypass"] = 0;
 
 
 
@@ -806,6 +807,18 @@ namespace WebApplication19.Controllers
             TempData["SymHeIn"] = parameters.HeIn;
             TempData["SymHeOff"] = parameters.HeIn;
             TempData["WoIn"] = false;
+            TempData["Bypass"] = parameters.Bypass;
+
+
+            if (parameters.Bypass == 1)
+
+            {
+                ViewBag.Bypass = "-B";
+            }
+            else if (parameters.Bypass == 2)
+            {
+                ViewBag.Bypass = "-0";
+            }
 
 
 
@@ -982,7 +995,8 @@ namespace WebApplication19.Controllers
             TempData["SymWoIn"] = parameters.SymWoIn;
             TempData["SymWoOff"] = parameters.SymWoOff;
             TempData["HeIn"] = false;
-            
+            TempData["Bypass"] = 0;
+
 
 
 
@@ -1064,6 +1078,8 @@ namespace WebApplication19.Controllers
 
         {
             string Side ="";
+            string Bypass = "";
+            string Binfo = "Nie";
 
 
             ViewBag.Message = "Paramerty centralki";
@@ -1081,7 +1097,17 @@ namespace WebApplication19.Controllers
 
 
 
+            if ((int)TempData["Bypass"] == 1)
 
+            {
+                Bypass = "-B";
+                Binfo = "Tak";
+            }
+            else if ((int)TempData["Bypass"] == 2)
+            {
+                Bypass = "-0";
+                Binfo = "Nie";
+            }
 
 
 
@@ -1090,14 +1116,14 @@ namespace WebApplication19.Controllers
 
             if ((bool)TempData["HeIn"] == true && ((bool)TempData["WoIn"] == false))
             {
-                ViewBag.Name = parameters.ahu[ni].Name + parameters.SymHeIn + Side ;
+                ViewBag.Name = parameters.ahu[ni].Name + parameters.SymHeIn + Side + Bypass ;
                 ViewBag.TotPowCons = parameters.ahu[ni].FanPow + parameters.ahu[ni].HePower + parameters.ahu[ni].RotPowCons;
 
             }
 
             else if ((bool)TempData["HeIn"] == false && ((bool)TempData["WoIn"] == false))
             {
-                ViewBag.Name = parameters.ahu[ni].Name + parameters.SymHeOff + Side;
+                ViewBag.Name = parameters.ahu[ni].Name + parameters.SymHeOff + Side + Bypass;
                 ViewBag.TotPowCons = parameters.ahu[ni].FanPow + parameters.ahu[ni].RotPowCons;
 
 
@@ -1105,7 +1131,7 @@ namespace WebApplication19.Controllers
 
             else if ((bool)TempData["HeIn"] == false && ((bool)TempData["WoIn"] == true))
             {
-                ViewBag.Name = parameters.ahu[ni].Name + parameters.SymWoIn + Side;
+                ViewBag.Name = parameters.ahu[ni].Name + parameters.SymWoIn + Side + Bypass;
                 ViewBag.TotPowCons = parameters.ahu[ni].FanPow + parameters.ahu[ni].RotPowCons;
 
 
@@ -1128,7 +1154,7 @@ namespace WebApplication19.Controllers
             ViewBag.WoPower = parameters.ahu[ni].WoPower;
             
             ViewBag.DyspSpr = Math.Round((double)TempData["DyspSpr"], 0);
-
+            ViewBag.Binfo = Binfo;
 
 
 

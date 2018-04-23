@@ -138,7 +138,32 @@
     </div>
 
 
+    
+     <div class="distance">
 
+             <h4>Czy centrala ma posiadać  wbudowany Bypass ?</h4>
+
+                       @Html.DropDownListFor(m => m.Bypass,
+
+       new SelectList(
+
+                   new List<Object> {
+                       new  { value = 1, text = "Tak" },
+                       new  { value = 2 , text = "Nie"},
+
+                },
+              "value",
+              "text",
+              1
+       ),
+        "Wybierz",
+                  new { @class = "form-control" }
+    )
+                 
+                 
+        
+        
+    </div>
 
 
 

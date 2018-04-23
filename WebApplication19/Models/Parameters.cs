@@ -40,6 +40,9 @@ namespace WebApplication19.Models
         [Required(ErrorMessage = "Proszę podać czy centrala ma posiadać narzewnicę wodną wtórną wbudowaną ")]
         public bool WoIn { get; set; }
 
+        [Required(ErrorMessage = "Proszę podać czy centrala ma posiadać wbudowany Bypass ")]
+        public int Bypass { get; set; }
+
         public double X = 1;  // współczynnik bezpieczeństwa
 
         public double Z = 0.8; // Współczynnik zmniejszenie minimalnego wydatku - poprawia dobór automatyczny

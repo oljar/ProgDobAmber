@@ -306,6 +306,7 @@
     <Content Include="Views\Shared\SelectionA2P.cshtml" />
     <Content Include="Views\Shared\SelectionA1Roof.cshtml" />
     <Content Include="Views\Shared\SelectionA1X.cshtml" />
+    <Content Include="Views\Manual\Kontakt.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
