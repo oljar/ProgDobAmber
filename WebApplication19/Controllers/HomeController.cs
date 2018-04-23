@@ -69,17 +69,23 @@ namespace WebApplication19.Controllers
                 {
                     WydNom = 1; //  model K300
 
+                    parameters.DyspSpr = parameters.X * parameters.CA1K300(parameters.Wydatek);
+
                 }
 
                 else if ((parameters.X * parameters.CA1K500(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax500) < 0))
                 {
                     WydNom = 2; //  model K500
 
+                    parameters.DyspSpr = parameters.X * parameters.CA1K500(parameters.Wydatek);
+
                 }
 
                 else if ((parameters.X * parameters.CA1K800(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax800) < 0))
                 {
                     WydNom = 3; //  model K800
+
+                    parameters.DyspSpr = parameters.X * parameters.CA1K800(parameters.Wydatek);
 
                 }
 
@@ -88,6 +94,8 @@ namespace WebApplication19.Controllers
 
                 {
                     WydNom = 5; //  model K1200
+
+                    parameters.DyspSpr = parameters.X * parameters.CA1K1200(parameters.Wydatek);
 
                 }
 
@@ -125,17 +133,22 @@ namespace WebApplication19.Controllers
                 {
                     WydNom = 1; //  model KP300
 
+                    parameters.DyspSpr = parameters.X * parameters.CA1KP300(parameters.Wydatek);
+
                 }
 
                 else if ((parameters.X * parameters.CA1KP500(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax500) < 0))
                 {
                     WydNom = 2; //  model KP500
 
+                    parameters.DyspSpr = parameters.X * parameters.CA1KP500(parameters.Wydatek);
                 }
 
                 else if ((parameters.X * parameters.CA1KP800(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax800) < 0))
                 {
                     WydNom = 3; //  model KP800
+
+                    parameters.DyspSpr = parameters.X * parameters.CA1KP800(parameters.Wydatek);
 
                 }
 
@@ -145,6 +158,7 @@ namespace WebApplication19.Controllers
                 {
                     WydNom = 5; //  model KP1200
 
+                    parameters.DyspSpr = parameters.X * parameters.CA1KP1200(parameters.Wydatek);
                 }
 
 
@@ -174,6 +188,7 @@ namespace WebApplication19.Controllers
                 if ((parameters.X * parameters.CA1P300(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax300) < 0))
                 {
                     WydNom = 1; //  model P300
+                    parameters.DyspSpr = parameters.X * parameters.CA1P300(parameters.Wydatek);
 
                 }
 
@@ -181,12 +196,15 @@ namespace WebApplication19.Controllers
                 {
                     WydNom = 2; //  model P500
 
+                    parameters.DyspSpr = parameters.X * parameters.CA1P500(parameters.Wydatek);
+
                 }
 
                 else if ((parameters.X * parameters.CA1P800(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax800) < 0))
                 {
                     WydNom = 3; //  model P800
 
+                    parameters.DyspSpr = parameters.X * parameters.CA1P800(parameters.Wydatek);
                 }
 
                 else if ((parameters.X * parameters.CA1P1200(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax1200) < 0))
@@ -195,6 +213,7 @@ namespace WebApplication19.Controllers
                 {
                     WydNom = 4; //  model P1200
 
+                    parameters.DyspSpr = parameters.X * parameters.CA1P1200(parameters.Wydatek);
                 }
 
 
@@ -236,17 +255,26 @@ namespace WebApplication19.Controllers
                         {
                             WydNom = 1; //  model PP300
 
+                            parameters.DyspSpr = parameters.X * parameters.CA1PP300(parameters.Wydatek);
+
                         }
 
                         else if ((parameters.X * parameters.CA1PP500(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax500) < 0))
                         {
                             WydNom = 2; //  model PP500
 
+                            parameters.DyspSpr = parameters.X * parameters.CA1PP500(parameters.Wydatek);
+
                         }
 
                         else if ((parameters.X * parameters.CA1PP800(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax800) < 0))
                         {
                             WydNom = 3; //  model PP800
+
+                            parameters.DyspSpr = parameters.X * parameters.CA1PP800(parameters.Wydatek);
+
+
+
 
                         }
 
@@ -255,6 +283,8 @@ namespace WebApplication19.Controllers
 
                         {
                             WydNom = 4; //  model PP1200
+
+                            parameters.DyspSpr = parameters.X * parameters.CA1PP1200(parameters.Wydatek);
 
                         }
 
@@ -291,17 +321,23 @@ namespace WebApplication19.Controllers
                         {
                             WydNom = 1; //  model O300
 
+                            parameters.DyspSpr = parameters.X * parameters.CA1O300(parameters.Wydatek);
+
                         }
 
                         else if ((parameters.X * parameters.CA1O500(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax500) < 0))
                         {
                             WydNom = 2; //  model O500
 
+                            parameters.DyspSpr = parameters.X * parameters.CA1O500(parameters.Wydatek);
+
                         }
 
                         else if ((parameters.X * parameters.CA1O800(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax800) < 0))
                         {
                             WydNom = 3; //  model O800
+
+                            parameters.DyspSpr = parameters.X * parameters.CA1O800(parameters.Wydatek);
 
                         }
 
@@ -310,6 +346,8 @@ namespace WebApplication19.Controllers
 
                         {
                             WydNom = 4; //  model O1200
+
+                            parameters.DyspSpr = parameters.X * parameters.CA1O1200(parameters.Wydatek);
 
                         }
 
@@ -345,17 +383,23 @@ namespace WebApplication19.Controllers
                         {
                             WydNom = 1; //  model OP300
 
+                            parameters.DyspSpr = parameters.X * parameters.CA1OP300(parameters.Wydatek);
+
                         }
 
                         else if ((parameters.X * parameters.CA1OP500(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax500) < 0))
                         {
                             WydNom = 2; //  model OP500
 
+                            parameters.DyspSpr = parameters.X * parameters.CA1OP500(parameters.Wydatek);
+
                         }
 
                         else if ((parameters.X * parameters.CA1OP800(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax800) < 0))
                         {
                             WydNom = 3; //  model OP800
+
+                            parameters.DyspSpr = parameters.X * parameters.CA1OP800(parameters.Wydatek);
 
                         }
 
@@ -364,6 +408,8 @@ namespace WebApplication19.Controllers
 
                         {
                             WydNom = 4; //  model OP1200
+
+                            parameters.DyspSpr = parameters.X * parameters.CA1OP1200(parameters.Wydatek);
 
                         }
 
@@ -485,7 +531,7 @@ namespace WebApplication19.Controllers
 
 
 
-
+                    TempData["DyspSpr"] = parameters.DyspSpr;
                     ViewBag.Sprez = a;
                     ViewBag.Wydatek = b;
                     ViewBag.Centrala = n;
@@ -494,7 +540,7 @@ namespace WebApplication19.Controllers
                     ViewBag.Z = parameters.Z;
 
 
-
+                    
                     ViewBag.VMax300 = parameters.VMax300;
                     ViewBag.VMax500 = parameters.VMax500;
                     ViewBag.VMax800 = parameters.VMax800;
@@ -578,17 +624,24 @@ namespace WebApplication19.Controllers
                 {
                     WydNom = 1; //  model A2P300
 
+                    parameters.DyspSpr = parameters.X * parameters.CA2P300(parameters.Wydatek);
+
                 }
 
                 else if ((parameters.X * parameters.CA2P500(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax500) < 0))
                 {
                     WydNom = 2; //  model A2P500
 
+                    parameters.DyspSpr = parameters.X * parameters.CA2P500(parameters.Wydatek);
+
+
                 }
 
                 else if ((parameters.X * parameters.CA2P800(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax800) < 0))
                 {
                     WydNom = 3; //  model A2P800
+
+                    parameters.DyspSpr = parameters.X * parameters.CA2P800(parameters.Wydatek);
 
                 }
 
@@ -597,6 +650,8 @@ namespace WebApplication19.Controllers
 
                 {
                     WydNom = 4; //  model A2P800
+
+                    parameters.DyspSpr = parameters.X * parameters.CA2P1200(parameters.Wydatek);
 
                 }
 
@@ -719,7 +774,7 @@ namespace WebApplication19.Controllers
 
 
 
-
+            TempData["DyspSpr"] = parameters.DyspSpr;
             ViewBag.Sprez = a;
             ViewBag.Wydatek = b;
             ViewBag.Centrala = n;
@@ -813,6 +868,7 @@ namespace WebApplication19.Controllers
                 {
                     WydNom = 4; //  model A1DO1200
 
+                    parameters.DyspSpr = parameters.X * parameters.CADOP1200(parameters.Wydatek);
                 }
 
                
@@ -895,7 +951,7 @@ namespace WebApplication19.Controllers
 
 
 
-
+            TempData["DyspSpr"] = parameters.DyspSpr;
             ViewBag.Sprez = a;
             ViewBag.Wydatek = b;
             ViewBag.Centrala = n;
@@ -1070,6 +1126,8 @@ namespace WebApplication19.Controllers
             ViewBag.SoundLevel = parameters.ahu[ni].SoundLevel; 
             ViewBag.PowClass = parameters.ahu[ni].PowClass;
             ViewBag.WoPower = parameters.ahu[ni].WoPower;
+            
+            ViewBag.DyspSpr = Math.Round((double)TempData["DyspSpr"], 0);
 
 
 

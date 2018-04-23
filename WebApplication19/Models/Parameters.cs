@@ -17,6 +17,8 @@ namespace WebApplication19.Models
         [Required(ErrorMessage = "Proszę podać wartość liczbową w [Pa] ")]
         public int Sprez { get; set; }
 
+        public double DyspSpr { get; set; }
+
         public int Centrala { get; set; }
 
 
