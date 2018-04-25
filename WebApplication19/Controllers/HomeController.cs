@@ -11,7 +11,7 @@ namespace WebApplication19.Controllers
     {
 
 
-        
+
 
 
         public ActionResult ProductChoise()
@@ -247,264 +247,264 @@ namespace WebApplication19.Controllers
 
 
 
-                    {
+            {
 
 
 
-                        if ((parameters.X * parameters.CA1PP300(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax300) < 0))
-                        {
-                            WydNom = 1; //  model PP300
-
-                            parameters.DyspSpr = parameters.X * parameters.CA1PP300(parameters.Wydatek);
-
-                        }
-
-                        else if ((parameters.X * parameters.CA1PP500(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax500) < 0))
-                        {
-                            WydNom = 2; //  model PP500
-
-                            parameters.DyspSpr = parameters.X * parameters.CA1PP500(parameters.Wydatek);
-
-                        }
-
-                        else if ((parameters.X * parameters.CA1PP800(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax800) < 0))
-                        {
-                            WydNom = 3; //  model PP800
-
-                            parameters.DyspSpr = parameters.X * parameters.CA1PP800(parameters.Wydatek);
-
-
-
-
-                        }
-
-                        else if ((parameters.X * parameters.CA1PP1200(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax1200) < 0))
-
-
-                        {
-                            WydNom = 4; //  model PP1200
-
-                            parameters.DyspSpr = parameters.X * parameters.CA1PP1200(parameters.Wydatek);
-
-                        }
-
-
-
-
-
-                        else
-                        {
-                            attention = " - Dopuszczalne parametry przekroczone";
-
-
-                        }
-
-
-
-                    }
-
-
-
-
-
-
-
-                    if (parameters.Wymiennik == 40 && parameters.Montaz == 0)   // dobór centrali A1 - O
-
-
-
-                    {
-
-
-
-                        if ((parameters.X * parameters.CA1O300(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax300) < 0))
-                        {
-                            WydNom = 1; //  model O300
-
-                            parameters.DyspSpr = parameters.X * parameters.CA1O300(parameters.Wydatek);
-
-                        }
-
-                        else if ((parameters.X * parameters.CA1O500(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax500) < 0))
-                        {
-                            WydNom = 2; //  model O500
-
-                            parameters.DyspSpr = parameters.X * parameters.CA1O500(parameters.Wydatek);
-
-                        }
-
-                        else if ((parameters.X * parameters.CA1O800(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax800) < 0))
-                        {
-                            WydNom = 3; //  model O800
-
-                            parameters.DyspSpr = parameters.X * parameters.CA1O800(parameters.Wydatek);
-
-                        }
-
-                        else if ((parameters.X * parameters.CA1O1200(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax1200) < 0))
-
-
-                        {
-                            WydNom = 4; //  model O1200
-
-                            parameters.DyspSpr = parameters.X * parameters.CA1O1200(parameters.Wydatek);
-
-                        }
-
-
-
-
-
-                        else
-                        {
-                            attention = " - Dopuszczalne parametry przekroczone";
-
-
-                        }
-
-
-
-                    }
-
-
-
-
-
-
-                    if (parameters.Wymiennik == 40 && parameters.Montaz == 10)   // dobór centrali A1 - OP
-
-
-
-                    {
-
-
-
-                        if ((parameters.X * parameters.CA1OP300(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax300) < 0))
-                        {
-                            WydNom = 1; //  model OP300
-
-                            parameters.DyspSpr = parameters.X * parameters.CA1OP300(parameters.Wydatek);
-
-                        }
-
-                        else if ((parameters.X * parameters.CA1OP500(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax500) < 0))
-                        {
-                            WydNom = 2; //  model OP500
-
-                            parameters.DyspSpr = parameters.X * parameters.CA1OP500(parameters.Wydatek);
-
-                        }
-
-                        else if ((parameters.X * parameters.CA1OP800(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax800) < 0))
-                        {
-                            WydNom = 3; //  model OP800
-
-                            parameters.DyspSpr = parameters.X * parameters.CA1OP800(parameters.Wydatek);
-
-                        }
-
-                        else if ((parameters.X * parameters.CA1OP1200(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax1200) < 0))
-
-
-                        {
-                            WydNom = 4; //  model OP1200
-
-                            parameters.DyspSpr = parameters.X * parameters.CA1OP1200(parameters.Wydatek);
-
-                        }
-
-
-
-
-
-                        else
-                        {
-                            attention = " - Dopuszczalne parametry przekroczone";
-
-
-                        }
-
-
-
-                    }
-
-
-
-
-
-
-
-
-           
-
-
-
-           
-
-                // Sprawdzenie zakresów - czy punkt pracy jest w zakresie wydatków 
-
-                if ((WydNom == 1) && (parameters.Wydatek - parameters.Z * parameters.VMin300) > 0)
+                if ((parameters.X * parameters.CA1PP300(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax300) < 0))
                 {
+                    WydNom = 1; //  model PP300
 
-                    Approve = true;
-                }
-
-                else if ((WydNom == 2) && (parameters.Wydatek - parameters.Z * parameters.VMin500) > 0)
-                {
-                    Approve = true;
+                    parameters.DyspSpr = parameters.X * parameters.CA1PP300(parameters.Wydatek);
 
                 }
 
-                else if ((WydNom == 3) && (parameters.Wydatek - parameters.Z * parameters.VMin800) > 0)
+                else if ((parameters.X * parameters.CA1PP500(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax500) < 0))
                 {
-                    Approve = true;
+                    WydNom = 2; //  model PP500
+
+                    parameters.DyspSpr = parameters.X * parameters.CA1PP500(parameters.Wydatek);
+
+                }
+
+                else if ((parameters.X * parameters.CA1PP800(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax800) < 0))
+                {
+                    WydNom = 3; //  model PP800
+
+                    parameters.DyspSpr = parameters.X * parameters.CA1PP800(parameters.Wydatek);
+
+
+
+
+                }
+
+                else if ((parameters.X * parameters.CA1PP1200(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax1200) < 0))
+
+
+                {
+                    WydNom = 4; //  model PP1200
+
+                    parameters.DyspSpr = parameters.X * parameters.CA1PP1200(parameters.Wydatek);
 
                 }
 
 
-                else if ((WydNom == 4) && (parameters.Wydatek - parameters.Z * parameters.VMin1200) > 0)
+
+
+
+                else
                 {
-                     Approve = true;
+                    attention = " - Dopuszczalne parametry przekroczone";
+
+
                 }
 
 
-                else if ((WydNom == 5) && (parameters.Wydatek - parameters.Z * parameters.VMinK1200) > 0)
+
+            }
+
+
+
+
+
+
+
+            if (parameters.Wymiennik == 40 && parameters.Montaz == 0)   // dobór centrali A1 - O
+
+
+
+            {
+
+
+
+                if ((parameters.X * parameters.CA1O300(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax300) < 0))
                 {
-                    Approve = true;
+                    WydNom = 1; //  model O300
+
+                    parameters.DyspSpr = parameters.X * parameters.CA1O300(parameters.Wydatek);
+
                 }
+
+                else if ((parameters.X * parameters.CA1O500(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax500) < 0))
+                {
+                    WydNom = 2; //  model O500
+
+                    parameters.DyspSpr = parameters.X * parameters.CA1O500(parameters.Wydatek);
+
+                }
+
+                else if ((parameters.X * parameters.CA1O800(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax800) < 0))
+                {
+                    WydNom = 3; //  model O800
+
+                    parameters.DyspSpr = parameters.X * parameters.CA1O800(parameters.Wydatek);
+
+                }
+
+                else if ((parameters.X * parameters.CA1O1200(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax1200) < 0))
+
+
+                {
+                    WydNom = 4; //  model O1200
+
+                    parameters.DyspSpr = parameters.X * parameters.CA1O1200(parameters.Wydatek);
+
+                }
+
+
+
+
+
+                else
+                {
+                    attention = " - Dopuszczalne parametry przekroczone";
+
+
+                }
+
+
+
+            }
+
+
+
+
+
+
+            if (parameters.Wymiennik == 40 && parameters.Montaz == 10)   // dobór centrali A1 - OP
+
+
+
+            {
+
+
+
+                if ((parameters.X * parameters.CA1OP300(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax300) < 0))
+                {
+                    WydNom = 1; //  model OP300
+
+                    parameters.DyspSpr = parameters.X * parameters.CA1OP300(parameters.Wydatek);
+
+                }
+
+                else if ((parameters.X * parameters.CA1OP500(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax500) < 0))
+                {
+                    WydNom = 2; //  model OP500
+
+                    parameters.DyspSpr = parameters.X * parameters.CA1OP500(parameters.Wydatek);
+
+                }
+
+                else if ((parameters.X * parameters.CA1OP800(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax800) < 0))
+                {
+                    WydNom = 3; //  model OP800
+
+                    parameters.DyspSpr = parameters.X * parameters.CA1OP800(parameters.Wydatek);
+
+                }
+
+                else if ((parameters.X * parameters.CA1OP1200(parameters.Wydatek) > parameters.Sprez) && ((parameters.Wydatek - parameters.VMax1200) < 0))
+
+
+                {
+                    WydNom = 4; //  model OP1200
+
+                    parameters.DyspSpr = parameters.X * parameters.CA1OP1200(parameters.Wydatek);
+
+                }
+
+
+
+
+
+                else
+                {
+                    attention = " - Dopuszczalne parametry przekroczone";
+
+
+                }
+
+
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            // Sprawdzenie zakresów - czy punkt pracy jest w zakresie wydatków 
+
+            if ((WydNom == 1) && (parameters.Wydatek - parameters.Z * parameters.VMin300) > 0)
+            {
+
+                Approve = true;
+            }
+
+            else if ((WydNom == 2) && (parameters.Wydatek - parameters.Z * parameters.VMin500) > 0)
+            {
+                Approve = true;
+
+            }
+
+            else if ((WydNom == 3) && (parameters.Wydatek - parameters.Z * parameters.VMin800) > 0)
+            {
+                Approve = true;
+
+            }
+
+
+            else if ((WydNom == 4) && (parameters.Wydatek - parameters.Z * parameters.VMin1200) > 0)
+            {
+                Approve = true;
+            }
+
+
+            else if ((WydNom == 5) && (parameters.Wydatek - parameters.Z * parameters.VMinK1200) > 0)
+            {
+                Approve = true;
+            }
 
 
 
             else
-                {
-                    Approve = false;
+            {
+                Approve = false;
 
-                }
-
-
-
-
-
-
-                    int n = 0 + parameters.Wymiennik + parameters.Montaz + WydNom;    //  n odpowiada za wybór  centrali
-
-
-                   
-
-                    int a = parameters.Sprez;
-
-                    int b = parameters.Wydatek;
+            }
 
 
 
 
 
-                    if (parameters.Sprez > parameters.MaxSprez)
-                    {
-                        n = 0;
-                        attention = " - Spręż dyspozycyjny przekroczono ";
-                        Approve = false;
-                    }
+
+            int n = 0 + parameters.Wymiennik + parameters.Montaz + WydNom;    //  n odpowiada za wybór  centrali
+
+
+
+
+            int a = parameters.Sprez;
+
+            int b = parameters.Wydatek;
+
+
+
+
+
+            if (parameters.Sprez > parameters.MaxSprez)
+            {
+                n = 0;
+                attention = " - Spręż dyspozycyjny przekroczono ";
+                Approve = false;
+            }
 
 
 
@@ -524,68 +524,68 @@ namespace WebApplication19.Controllers
                     break;
 
                 }
-               
+
 
             }
 
 
 
 
-                    TempData["DyspSpr"] = parameters.DyspSpr;
-                    ViewBag.Sprez = a;
-                    ViewBag.Wydatek = b;
-                    ViewBag.Centrala = n;
-                    ViewBag.Approve = Approve;
+            TempData["DyspSpr"] = parameters.DyspSpr;
+            ViewBag.Sprez = a;
+            ViewBag.Wydatek = b;
+            ViewBag.Centrala = n;
+            ViewBag.Approve = Approve;
 
-                    ViewBag.Z = parameters.Z;
-
-
-                    
-                    ViewBag.VMax300 = parameters.VMax300;
-                    ViewBag.VMax500 = parameters.VMax500;
-                    ViewBag.VMax800 = parameters.VMax800;
-                    ViewBag.VMax1200 = parameters.VMax1200;
+            ViewBag.Z = parameters.Z;
 
 
-                    ViewBag.VMin300 = parameters.VMin300;
-                    ViewBag.VMin500 = parameters.VMin500;
-                    ViewBag.VMin800 = parameters.VMin800;
-                    ViewBag.VMin1200 = parameters.VMin1200;
-                    ViewBag.VMinK1200 = parameters.VMinK1200;
-                    ViewBag.HeIn = parameters.HeIn;
-                    ViewBag.SymHeIn = parameters.SymHeIn;
-                    ViewBag.SymHeOff = parameters.SymHeOff;
 
-                    TempData["Sprez"] = a;
-                    TempData["Wydatek"] = b;
-                    TempData["HeIn"] = parameters.HeIn;
-                    TempData["SymHeIn"] = parameters.HeIn;
-                    TempData["SymHeOff"] = parameters.HeIn;
-                    TempData["WoIn"] = false;
-                    TempData["Bypass"] = 0;
+            ViewBag.VMax300 = parameters.VMax300;
+            ViewBag.VMax500 = parameters.VMax500;
+            ViewBag.VMax800 = parameters.VMax800;
+            ViewBag.VMax1200 = parameters.VMax1200;
+
+
+            ViewBag.VMin300 = parameters.VMin300;
+            ViewBag.VMin500 = parameters.VMin500;
+            ViewBag.VMin800 = parameters.VMin800;
+            ViewBag.VMin1200 = parameters.VMin1200;
+            ViewBag.VMinK1200 = parameters.VMinK1200;
+            ViewBag.HeIn = parameters.HeIn;
+            ViewBag.SymHeIn = parameters.SymHeIn;
+            ViewBag.SymHeOff = parameters.SymHeOff;
+
+            TempData["Sprez"] = a;
+            TempData["Wydatek"] = b;
+            TempData["HeIn"] = parameters.HeIn;
+            TempData["SymHeIn"] = parameters.HeIn;
+            TempData["SymHeOff"] = parameters.HeIn;
+            TempData["WoIn"] = false;
+            TempData["Bypass"] = 0;
 
 
 
 
 
             if (ModelState.IsValid)
-                    {
-                        ViewBag.Message = "Dobór Automatyczny - Amber 1" + attention;
-                        return View("SelectionA1X");
-                    }
-                    else
+            {
+                ViewBag.Message = "Dobór Automatyczny - Amber 1" + attention;
+                return View("SelectionA1X");
+            }
+            else
 
-                    {
-                        ViewBag.Message = "Dobór Automatyczny - Amber 1 - Popraw dane";
-                        return View();
-                    }
+            {
+                ViewBag.Message = "Dobór Automatyczny - Amber 1 - Popraw dane";
+                return View();
+            }
 
 
 
 
         }
-            
-    
+
+
 
 
 
@@ -768,7 +768,7 @@ namespace WebApplication19.Controllers
                     break;
 
                 }
-               
+
 
             }
 
@@ -884,7 +884,7 @@ namespace WebApplication19.Controllers
                     parameters.DyspSpr = parameters.X * parameters.CADOP1200(parameters.Wydatek);
                 }
 
-               
+
 
 
 
@@ -917,7 +917,7 @@ namespace WebApplication19.Controllers
 
             }
 
-             
+
 
 
             int n = 200 + parameters.Wymiennik + parameters.Montaz + WydNom;    //  n odpowiada za wybór  centrali
@@ -958,7 +958,7 @@ namespace WebApplication19.Controllers
                     break;
 
                 }
-               
+
 
             }
 
@@ -1013,7 +1013,7 @@ namespace WebApplication19.Controllers
             if (ModelState.IsValid)
             {
                 ViewBag.Message = "Dobór Automatyczny - Amber 1 - Wer. Dachowa" + attention;
-                return View("SelectionA1Roof",parameters);
+                return View("SelectionA1Roof", parameters);
             }
             else
 
@@ -1046,7 +1046,7 @@ namespace WebApplication19.Controllers
         {
             TempData["Side"] = 1;
 
-            return RedirectToAction("AhuData","Home");
+            return RedirectToAction("AhuData", "Home");
         }
 
 
@@ -1077,7 +1077,7 @@ namespace WebApplication19.Controllers
 
 
         {
-            string Side ="";
+            string Side = "";
             string Bypass = "";
             string Binfo = "Nie";
 
@@ -1088,11 +1088,11 @@ namespace WebApplication19.Controllers
 
             if ((int)TempData["Side"] == 1)
             {
-                  Side= "-L";
+                Side = "-L";
             }
             else if ((int)TempData["Side"] == 2)
             {
-                  Side = "-P";
+                Side = "-P";
             }
 
 
@@ -1116,7 +1116,7 @@ namespace WebApplication19.Controllers
 
             if ((bool)TempData["HeIn"] == true && ((bool)TempData["WoIn"] == false))
             {
-                ViewBag.Name = parameters.ahu[ni].Name + parameters.SymHeIn + Side + Bypass ;
+                ViewBag.Name = parameters.ahu[ni].Name + parameters.SymHeIn + Side + Bypass;
                 ViewBag.TotPowCons = parameters.ahu[ni].FanPow + parameters.ahu[ni].HePower + parameters.ahu[ni].RotPowCons;
 
             }
@@ -1147,12 +1147,12 @@ namespace WebApplication19.Controllers
             ViewBag.ExtPres = TempData["Sprez"];
             ViewBag.FanPow = parameters.ahu[ni].FanPow;
             ViewBag.HePower = parameters.ahu[ni].HePower;
-            ViewBag.SupVol = parameters.ahu[ni].SupVol;      
+            ViewBag.SupVol = parameters.ahu[ni].SupVol;
             ViewBag.Efficiency = parameters.ahu[ni].Efficiency;
-            ViewBag.SoundLevel = parameters.ahu[ni].SoundLevel; 
+            ViewBag.SoundLevel = parameters.ahu[ni].SoundLevel;
             ViewBag.PowClass = parameters.ahu[ni].PowClass;
             ViewBag.WoPower = parameters.ahu[ni].WoPower;
-            
+
             ViewBag.DyspSpr = Math.Round((double)TempData["DyspSpr"], 0);
             ViewBag.Binfo = Binfo;
 
@@ -1162,12 +1162,21 @@ namespace WebApplication19.Controllers
             return View(parameters);
 
         }
+        protected override void OnException(ExceptionContext filterContext)
+        {
+            Exception e = filterContext.Exception;
+            //Log Exception e
+            filterContext.ExceptionHandled = true;
+            filterContext.Result = new ViewResult()
+            {
+                ViewName = "Error"
+            };
 
 
 
-        
+        }
+
     }
-
 }
 
 

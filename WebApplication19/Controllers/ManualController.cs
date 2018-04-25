@@ -44,7 +44,7 @@ namespace WebApplication19.Controllers
 
             int Size = parameters.WydNom;
 
-         
+
 
 
             if (parameters.Wymiennik == 0 && parameters.Montaz == 0)   // dobór centrali A1 - K
@@ -94,7 +94,7 @@ namespace WebApplication19.Controllers
                 }
             }
 
-      
+
 
 
             if (parameters.Wymiennik == 0 && parameters.Montaz == 10)   // dobór centrali A1 - KP
@@ -254,7 +254,7 @@ namespace WebApplication19.Controllers
             }
 
 
-            
+
 
 
 
@@ -370,28 +370,28 @@ namespace WebApplication19.Controllers
 
             int n = 0 + parameters.Wymiennik + parameters.Montaz + Size;    //  n odpowiada za wybór  centrali
 
-                if (n == 4 || n == 14)                                                 //  zmiana dla modeli K-1200
-                {
-                    n = n + 1;
-                }
+            if (n == 4 || n == 14)                                                 //  zmiana dla modeli K-1200
+            {
+                n = n + 1;
+            }
 
-                int a = parameters.Sprez;
+            int a = parameters.Sprez;
 
-                int b = parameters.Wydatek;
-
-
+            int b = parameters.Wydatek;
 
 
 
 
 
 
-                if (parameters.Sprez > parameters.MaxSprez)
-                {
-                    n = 0;
-                    attention = " - Spręż dyspozycyjny przekroczono ";
-                    Approve = false;
-                }
+
+
+            if (parameters.Sprez > parameters.MaxSprez)
+            {
+                n = 0;
+                attention = " - Spręż dyspozycyjny przekroczono ";
+                Approve = false;
+            }
 
 
 
@@ -458,19 +458,19 @@ namespace WebApplication19.Controllers
 
             if (ModelState.IsValid)
             {
-                 ViewBag.Message = "Dobór Ręczny - Amber 1" + attention;
-                 return View("SelectionA1X");
+                ViewBag.Message = "Dobór Ręczny - Amber 1" + attention;
+                return View("SelectionA1X");
             }
             else
 
             {
-                 ViewBag.Message = "Dobór Ręczny - Amber 1 - Popraw dane";
-                 return View();
+                ViewBag.Message = "Dobór Ręczny - Amber 1 - Popraw dane";
+                return View();
             }
 
 
 
-            
+
 
         }
 
@@ -479,16 +479,16 @@ namespace WebApplication19.Controllers
 
 
 
-        
+
 
 
         public ActionResult TypChoiseAmber2Manual()
-            {
-                ViewBag.Message = "Dobór Ręczny - Amber 2 ";
-                return View();
-            }
+        {
+            ViewBag.Message = "Dobór Ręczny - Amber 2 ";
+            return View();
+        }
 
-        
+
 
 
         [HttpPost]
@@ -500,11 +500,11 @@ namespace WebApplication19.Controllers
             string attention = "";
             bool Approve = false;
 
-          
+
 
             int Size = parameters.WydNom;  // Wilekość centrali
 
-            
+
 
 
             if (parameters.Wymiennik == 20 && parameters.Montaz == 0)   // dobór centrali A1 - OP
@@ -643,7 +643,7 @@ namespace WebApplication19.Controllers
             if (parameters.Bypass == 1)
 
             {
-               ViewBag.Bypass = "-B";
+                ViewBag.Bypass = "-B";
             }
             else if (parameters.Bypass == 2)
             {
@@ -696,7 +696,7 @@ namespace WebApplication19.Controllers
             string attention = "";
             int Size = parameters.WydNom;
             bool Approve = false;
-            
+
 
 
             if (parameters.Wymiennik == 40 && parameters.Montaz == 0)   // dobór centrali A1 - Dachowy
@@ -716,7 +716,7 @@ namespace WebApplication19.Controllers
                     Approve = false;
                 }
 
-             
+
             }
 
 
@@ -926,7 +926,7 @@ namespace WebApplication19.Controllers
 
 
 
-            
+
 
 
 
@@ -959,9 +959,20 @@ namespace WebApplication19.Controllers
 
         }
 
+        protected override void OnException(ExceptionContext filterContext)
+        {
+            Exception e = filterContext.Exception;
+            //Log Exception e
+            filterContext.ExceptionHandled = true;
+            filterContext.Result = new ViewResult()
+            {
+                ViewName = "Error"
+            };
+
+
+        }
+
     }
-
-
 
 
 }
