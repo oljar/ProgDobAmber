@@ -1174,6 +1174,84 @@ namespace WebApplication19.Controllers
             };
         }
 
+        public ActionResult Amber1()
+
+
+        {
+            ViewBag.Message = "Amber 1 - opis";
+
+
+            return View();
+
+        }
+
+
+        public ActionResult Amber2()
+
+
+        {
+            ViewBag.Message = "Amber 2 - opis";
+
+
+            return View();
+
+        }
+
+        public ActionResult Amber1DO()
+
+
+        {
+            ViewBag.Message = "Amber 1 Wersja dachowa - opis";
+
+
+            return View();
+
+        }
+
+
+
+
+        public ActionResult Krzyzowy()
+       
+
+
+        {
+            ViewBag.Message = "Wymiennik krzyżowy - opis";
+
+
+            return View();
+
+        }
+
+
+
+
+        public ActionResult Przeciwpradowy()
+
+
+
+        {
+            ViewBag.Message = "Wymiennik przeciwprądowy - opis";
+
+
+            return View();
+
+        }
+
+
+        public ActionResult Obrotowy()
+
+
+        {
+            ViewBag.Message = "Wymiennik obrotowy - opis";
+
+
+            return View();
+
+        }
+
+
+
 
     }
 

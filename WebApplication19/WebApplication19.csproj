@@ -307,6 +307,12 @@
     <Content Include="Views\Shared\SelectionA1Roof.cshtml" />
     <Content Include="Views\Shared\SelectionA1X.cshtml" />
     <Content Include="Views\Manual\Kontakt.cshtml" />
+    <Content Include="Views\Home\Amber1.cshtml" />
+    <Content Include="Views\Home\Amber2.cshtml" />
+    <Content Include="Views\Home\Amber1DO.cshtml" />
+    <Content Include="Views\Home\Krzyzowy.cshtml" />
+    <Content Include="Views\Home\Przeciwpradowy.cshtml" />
+    <Content Include="Views\Home\Obrotowy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
