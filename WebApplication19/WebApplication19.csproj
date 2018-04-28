@@ -164,7 +164,10 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Image\182.jpg" />
+    <Content Include="Image\184.jpg" />
+    <Content Include="Image\185.jpg" />
     <Content Include="Image\234.jpg" />
+    <Content Include="Image\47-472.jpg" />
     <Content Include="Image\A1DO-L_small.jpg" />
     <Content Include="Image\A1DO-P_small.jpg" />
     <Content Include="Image\A1K-L_small.jpg" />
