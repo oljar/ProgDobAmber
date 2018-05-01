@@ -1201,7 +1201,7 @@ namespace WebApplication19.Controllers
 
 
         {
-            ViewBag.Message = "Amber 1 Wersja dachowa - opis";
+            ViewBag.Message = "Amber 1 wersja dachowa - opis";
 
 
             return View();
