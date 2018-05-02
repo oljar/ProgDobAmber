@@ -190,8 +190,11 @@
     <Content Include="Image\A2P.jpg" />
     <Content Include="Image\A2P1200_small.jpg" />
     <Content Include="Image\A2P500_small.jpg" />
+    <Content Include="Image\K.jpg" />
     <Content Include="Image\logo.png" />
     <Content Include="Image\O-1200-DO.bmp" />
+    <Content Include="Image\O.jpg" />
+    <Content Include="Image\P.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
